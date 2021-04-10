@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRAS Login</title>
+    <link rel="shortcut icon" href="css/icon.png">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <section>
+        <!--Start Navbar-->
+        <div class="navbar-info">
+            <div class="container">
+                <h2>Thebes Academy</h2>
+                <span><i class="fas fa-phone-alt"></i> : 0238093013 - 0238093122</span>
+            </div>
+        </div>
+        <!--End Navbar-->
+        <div class="cont">
+            <div class="container">
+                <div class="row">
+                    <!--Start Img-->
+                    <div class="col-lg-6">
+                        <div class="back-img">
+                            <img src="css/back.png" alt="Thebes Academy">
+                            <img class="two" src="css/back2.png" alt="Thebes Academy">
+                        </div>
+                    </div>
+                    <!--End Img-->
+                    <!--Start Box-->
+                    <div class="col-lg-6">
+                        <div class="log">
+                            <!--Start Signin-->
+                            <div class="user signin">
+                                <div class="formbox">
+                                    <form action="/" method="POST">
+                                        <h2 class="text-center">Sign In</h2>
+                                        <input type="text" name="user_name" placeholder="Username">
+                                        <input type="password" name="password" placeholder="Password">
+                                        <input type="submit" value="Login">
+                                        <span>Don't have an account?<a href="#" onclick="toggleForm();">Sign Up</a></span>
+                                    </form>
+                                </div>
+                            </div>
+                            <!--End Signin-->
+                            <!--Start SignUp-->
+                            <div class="user signup">
+                                <div class="formbox">
+                                    <form id="signUP" action="/" method="POST">
+                                        <h2 class="text-center">Sign Up</h2>
+                                        <input type="text" name="stuID" placeholder="Enter StuID">
+                                        <input type="email" name="Ua" placeholder="Enter Univercity Account">
+                                        <input type="password" name="password" placeholder="Enter Password">
+                                        <input type="password" name="adminCode" placeholder="Enter Admin Code">
+                                        <input type="submit" value="Sign Up">
+                                        <span>Already have an account?<a href="#" onclick="toggleForm();">Sign In</a></span>
+                                    </form>
+                                </div>
+                            </div>
+                            <!--End SignUp-->
+                        </div>
+                    </div>
+                    <!--End Box-->
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        function toggleForm() {
+            var sing = document.querySelector('.signin');
+            sing.classList.toggle('active');
+            var up = document.querySelector('.navbar-info');
+            up.classList.toggle('active');
+            var img = document.querySelector('.two')
+            img.classList.toggle('active')
+        }
+    </script>
+</body>
+
+</html>

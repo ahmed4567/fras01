@@ -1,0 +1,156 @@
+
+.row
+{
+    margin-right: 0;
+
+}
+.row>*
+{
+    padding-right: 0;
+}
+body
+{
+    font-family: sans-serif;
+    background: rgb(240, 238, 238)
+}
+section  .copls
+{
+    position: absolute;
+    top: 44px;
+    left: 238px;
+    font-size: 28px;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    transition: all ease-in-out 0.3s;
+}
+section  .copls i
+{
+    color: #183153;
+}
+section  .copls.open
+{
+    left: 0;
+}
+section .menu-info
+{
+    width: 235px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: fixed;
+    background: #183153;
+    transition: all ease-in-out 0.3s;
+}
+section .menu-info.open
+{
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+}
+
+section .menu-info .setting
+{
+
+    width: 100%;
+    height: 100%;
+    position: relative;
+    
+}
+section .menu-info .setting .header 
+{
+    padding: 25px;
+    font-size: 32px;
+    line-height: 22px;
+    letter-spacing: 2px;
+    font-weight: bold;
+
+}
+section .menu-info .setting .header a
+{
+    text-decoration: none;
+    color: #f3f3f3;
+    
+}
+section .menu-info .setting ul
+{
+    width: 100%;
+    height: 100%;
+    padding-left: 0;
+}
+section .menu-info .setting  ul li a
+{
+    text-decoration: none;
+    color: #fff;
+    display: block;
+  list-style: none;
+  line-height: 65px;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgb(0, 0, 0);
+  transition:  all ease-in-out .3s;
+}
+section .menu-info .setting  ul li a i
+{
+    margin-right: 8px;
+}
+section .menu-info .setting  ul li:hover a
+{
+    padding-left: 35px;
+}
+section .menu-info .setting ul li:hover
+{
+    background:rgb(13, 26, 43);
+}
+
+.instractor-info
+{
+    border-bottom: 1px solid black;
+    background: #183153;
+    padding:10px;
+    color: #fff;
+ 
+}
+.instractor-info  .container label
+{
+
+    margin-left: 14px;
+    float: right;
+}
+@media (min-width: 480px) and (max-width : 1023px)
+{
+    section  .copls
+    {
+        visibility: visible;
+        opacity: 1;
+        left: 5px;
+        top: 0;
+        z-index: 9999;
+    }
+    section  .copls i
+    {
+        color: #fff;
+    }
+    section .menu-info
+    {
+        left: -700px;
+        visibility: hidden;
+        opacity: 0;
+        height: 206px;
+        position: absolute;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        width: 638%;
+    }
+}
+@media (min-width : 1023)
+{
+    body:after {
+        content: 'open';
+        display: none;
+    }
+}
+}

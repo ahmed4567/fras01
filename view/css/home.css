@@ -1,0 +1,57 @@
+.home
+{
+        max-width: 500px;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        margin-top: 20px;
+        transform: translate(-50%, -50%);
+}
+.home .container .going-btn,
+.home .container .class-btn
+{
+    position:absolute;
+    width: 100%; 
+    border: 1px solid black;
+    color: #fff;
+    background: #183153;
+    padding: 40px;
+    border-radius: 6px;
+    transition: 0.5s;
+}
+.home .container .going-btn h2,
+.home .container .class-btn h2
+{
+ font-size: 20px;
+ font-weight: bold;
+ line-height: 20px;
+ letter-spacing: 0.5;
+}
+.home .container .going-btn a,
+.home .container .class-btn a
+{
+    text-decoration: none;
+    display: block;
+    list-style: none;
+    line-height: 65px;
+    box-sizing: border-box;
+
+}
+.home .container .going-btn
+{
+    top: 25%;
+    left: -25%;
+}
+.home .container .going-btn:hover
+{
+    background: #0f2038;
+}
+.home .container .class-btn
+{
+    top: 219px;
+    left: 150px;
+}
+.home .container .class-btn:hover
+{
+    background: #531818;
+}
