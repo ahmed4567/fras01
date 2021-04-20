@@ -1,11 +1,32 @@
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config
+}
 //jshint esversion: 6
 let projectData = {}
-let adminL = ['123']
     // Require Express to run server and routes
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const faceApi = require('face-api.js')
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://admin:admin@cluster0.vjlte.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+client.connect(() => console.log("conected to mongoos"))
+client.connect(err => {
+    const collection = client.db("test").collection("devices");
+    // perform actions on the collection object
+    client.close();
+});
+/*
+const mongos = require('mongoose')
+mongos.connect(process.env.DATABASE_URL, {
+    useNewUrlParser: true
+})
+const db = mongos.connection
+db.on('error', error => console.error(error))
+db.once('open', () => console.log("conected to mongoos"))
+*/
+
 const app = express();
 //creat app
 app.set('view engine', 'ejs')
@@ -16,7 +37,7 @@ app.use(express.static('view'));
 app.use(cors());
 
 //setup server
-const port = 8000;
+const port = 3030;
 
 const server = app.listen(port, listening);
 
