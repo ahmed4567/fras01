@@ -39,7 +39,7 @@ app.use(cors());
 //setup server
 const port = 3030;
 
-const server = app.listen(port, listening);
+const server = app.listen(process.env.PORT || port, listening);
 
 function listening() {
     console.log(`server running on http://localhost:${port}`)
