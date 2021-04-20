@@ -3,7 +3,10 @@
     "version": "1.0.0",
     "description": "",
     "main": "app.js",
-    "scripts": {},
+    "scripts": {
+        "start": "node server.js",
+        "devstart": "nodemon server.js"
+    },
     "author": "",
     "license": "ISC",
     "dependencies": {
