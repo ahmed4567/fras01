@@ -18,7 +18,7 @@ app.use(cors());
 //setup server
 const port = 8000;
 
-const server = app.listen(port, listening);
+//const server = app.listen(port, listening);
 
 function listening() {
     console.log(`server running on http://localhost:${port}`)
@@ -45,5 +45,5 @@ app.get('/going-class', (req, res) => {
 });
 //routs post
 app.post('/login', (req, res) => {
-
+    req.body.user_name
 });
