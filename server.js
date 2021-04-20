@@ -11,6 +11,7 @@ const app = express();
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
 app.use(express.static('view'));
 app.use(cors());
 
@@ -23,43 +24,26 @@ function listening() {
     console.log(`server running on http://localhost:${port}`)
 }
 
-//routs 
-app.get('/all', sendData);
+//routs get
 app.get('/', (req, res) => {
-        res.sendFile(__dirname + '/view/Login.html')
+        res.render(__dirname + '/view/index.ejs')
+            // res.sendFile(__dirname + '/view/Login.html')
     })
     //app.post('/', (req, res) => {})
-app.post('/', addData);
 
-//get f 
-itContain = (i, list) => {
-    list.forEach(element => {
-        if (element === i) {
-            return true
-        }
-    })
-    return false
-}
+app.get('/home', (req, res) => {
+    res.sendFile(__dirname + '/view/Home.html')
+});
+app.get('/manage-class', (req, res) => {
+    res.sendFile(__dirname + '/view/manage-class.html')
+});
+app.get('/manage-student', (req, res) => {
+    res.sendFile(__dirname + '/view/manage-student.html')
+});
+app.get('/going-class', (req, res) => {
+    res.sendFile(__dirname + '/view/going-class.html')
+});
+//routs post
+app.post('/login', (req, res) => {
 
-function sendData(request, response) {
-    response.send(projectData);
-    console.log(projectData)
-}
-
-
-function addData(req, res) {
-    newEntry = {
-        stuID: req.body.stuID,
-        UA: req.body.Ua,
-        password: req.body.password,
-        adminCode: req.body.adminCode
-    }
-    if (itContain(newEntry.adminCode, adminL)) {
-        projectData = newEntry
-        console.log(projectData)
-    } else {
-        console.log(`error${newEntry.adminCode}/=${adminL[0]}`)
-    }
-
-
-}
+});
