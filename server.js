@@ -18,7 +18,7 @@ app.use(cors());
 //setup server
 const port = 8000;
 
-//const server = app.listen(port, listening);
+const server = app.listen(port, listening);
 
 function listening() {
     console.log(`server running on http://localhost:${port}`)
@@ -44,6 +44,26 @@ app.get('/going-class', (req, res) => {
     res.sendFile(__dirname + '/view/going-class.html')
 });
 //routs post
-app.post('/login', (req, res) => {
-    req.body.user_name
+app.post('/signIN', (req, res) => {
+    userEntry = {
+        userName: req.body.user_name,
+        pass: req.body.password
+    }
+    projectData = userEntry
+    console.log(`sign in data =`)
+    console.log(projectData)
+
+    projectData = {}
 });
+app.post("/signUP", (req, res) => {
+    newEntry = {
+        stuID: req.body.stuID,
+        password: req.body.password,
+        Ua: req.body.Ua,
+        adminCode: req.body.adminCode,
+    }
+    projectData = newEntry
+    console.log(`signUP data =`)
+    console.log(projectData)
+    projectData = {}
+})
