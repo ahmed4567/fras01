@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Student</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/adminstyle.css">
+</head>
+<body>
+    <div class="cont">
+        <!--Start left Side-->
+        <div class="sidbar">
+            <ul>
+                <li class="brand">
+                    <a href="admin.html">
+                        <span class="icon">F</span>
+                        <span class="title"><h1>fras</h1></span>
+                    </a>
+                    
+                </li>
+                <li>
+                    <a href="managStudent.html">
+                        <span class="icon"><i class="fas fa-user-cog"></i></span>
+                        <span class="title">Manage Student</span></a>
+                </li>
+                <li>
+                    <a href="managclass.html">
+                        <span class="icon"><i class="fas fa-cogs"></i></span>
+                        <span class="title">Manage classroom</span>
+                    </a>
+                    
+                </li>
+            </ul>
+        </div>
+        <!--End left Side-->
+        <!--**********************************************************************-->
+        <!-- Start Right Side -->
+        <div class="main">
+                    <!-- Start Nav bar -->
+          <div class="navigbar">
+              <div class="toggle" onclick="toggleMenu()">
+                 <i class="fas fa-bars"></i>
+              </div>
+              <div class="instractor">
+                   <div class="stu-id">
+                        <span>Stu ID : </span>
+                        <span></span>
+                   </div>
+                   <div class="stu-name">
+                         <span>Stu Name : </span>
+                         <span></span>
+                   </div>
+              </div>
+              <div class="logout">
+                  <a href="#">
+                      <span>Logout</span>
+                  </a>
+              </div>
+          </div>
+          <!-- End Nav bar -->
+          <!-- ***************************************************************** -->
+          <!-- Start Struc Main-->
+           <div class="main-admin">
+               <div class="box-nextclass">
+                   <div class="box-infoclass">
+                       <!-- head -->
+                        <div class="head-class">
+                         <div class="class-title">
+                             <h2>Next Class</h2>
+                         </div>
+                         <div class="hall-numb">
+                             
+                             <span>Hall Number: </span>
+                             <span>15</span>
+                         </div>
+                        </div>
+                        <!-- Center -->
+                        <div class="center-class">
+                            <div class="sub-name">
+                                <span>Subject Name : </span>
+                                <span>...</span>
+                            </div>
+                            <div class="class-fact">
+                                <span>Class Faculty: </span>
+                                <span>...</span>
+                            </div>
+                        </div>
+                        <!-- Foot -->
+                        <div class="changer">
+                            <div class="change-sub">
+                                <a href="#">
+                                    <span>Change Subject</span>
+                                </a>
+                            </div>
+                            <div class="change-hall">
+                               <a href="#">
+                                   <span>Change Hall Number</span>
+                               </a>
+                            </div>
+                        </div>
+                       </div>
+                   </div>
+               </div>
+          <!-- End Struc -->
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

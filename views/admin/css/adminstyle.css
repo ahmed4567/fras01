@@ -1,0 +1,741 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.cont
+{
+    position: relative;
+    width: 100%;
+}
+.cont .sidbar
+{
+position: fixed;
+width: 250px;
+height: 100%;
+background: #531818;
+transition: 0.5s;
+overflow: hidden;
+}
+.cont .sidbar.active
+{
+    width: 60px;
+}
+.cont .sidbar ul
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;   
+}
+.cont .sidbar ul li
+{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 1);
+    transition: 0.5s;
+}
+.cont .sidbar ul li:hover
+{ 
+    background: #2b0d0d;
+}
+.cont .sidbar ul li.brand
+{
+    text-transform: uppercase;
+    text-align: center;
+    background: transparent;
+}
+.cont .sidbar ul li.brand a:hover
+{
+    color: #2b0d0d;
+}
+.cont .sidbar ul li.brand .icon
+{
+    opacity: 0;
+    font-size: 32px;
+    font-weight: bold;
+    transition: 0.5s;
+}
+.cont .sidbar ul li.brand .icon.active 
+{
+  
+    opacity: 1;
+}
+.cont .sidbar ul li a
+{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+
+}
+.cont .sidbar ul li a .icon
+{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+
+}
+.cont .sidbar ul li a .icon .fas
+{
+    color: #fff;
+    font-size: 25px;
+}
+.cont .sidbar ul li a .title
+{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+.cont .sidbar ul li:hover
+{
+    padding-left: 15px;
+}
+/* Main */
+.main
+{
+    position: absolute;
+    width: calc(100% - 250px);
+    left: 250px;
+    min-height: 100vh;
+    background: #f5f5f5;
+    transition: 0.5s;
+}
+.main.active 
+{
+    width: calc(100% - 60px);
+    left: 60px;
+}
+.main .navigbar
+{
+    width: 100%;
+    height: 60px;
+    background: #531818;
+    padding: 0 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+}
+.main .navigbar .toggle
+{
+   position: relative;
+   width: 60px;
+   height: 60px;
+   cursor: pointer;
+   transition: 0.5s;
+}
+.main .navigbar .toggle.active
+{
+    z-index: 99999;
+    right: 0;
+}
+.main .navigbar .toggle i
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    font-size: 24px;
+    line-height: 60px;
+    text-align: center;
+    color: #fff;
+    transition: 0.5s;
+}
+.main .navigbar .instractor
+{
+    display: flex;
+    color: #fff;
+}
+
+.main .navigbar .instractor .stu-id
+{
+    padding-right: 50px;
+}
+.main .navigbar .logout
+{
+    position: relative;
+    transition: 0.5s;
+}
+.main .navigbar .logout a
+{
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+   
+}
+.main .navigbar .logout a span
+{
+
+    position: relative;
+    padding: 6px 10px;
+    background: #2b0d0d;
+    border-radius: 3px;
+}
+/* Start Struct */
+.main .main-admin
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.main .main-admin .inf-class
+{
+    position: relative;
+   width: 800px;
+   height: 460px;
+   margin: 20px;
+}
+.main .main-admin .inf-class .going-class
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 160px;
+    background: #183153;
+
+}
+.main .main-admin .inf-class .next-class
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60%;
+    height: 160px;
+    background: #531818;
+}
+.main .main-admin .inf-class .going-class,
+.main .main-admin .inf-class .next-class
+{
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+.main .main-admin .inf-class .going-class a,
+.main .main-admin .inf-class .next-class a
+{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    transition: 0.5s;
+}
+.main .main-admin .inf-class .going-class a:hover
+{
+    color:#0d2852;
+}
+.main .main-admin .inf-class .next-class a:hover
+{
+    color:#651111;
+}
+@media (max-width: 815px)
+{
+    .cont .sidbar
+{
+    width: 60px;
+    transition: all ease-in-out 0.5s;
+}
+.cont .sidbar ul li.brand .icon
+{
+    opacity: 1;
+}
+.cont .sidbar.active
+{
+    width: 100%;
+    z-index: 1000;
+}
+.main 
+{
+    width: calc(100% - 60px);
+    left: 60px;
+
+}
+.main .navigbar .toggle.active
+{
+    order: 3;
+    
+}
+.main .main-admin .inf-class .going-class a,
+ .main .main-admin .inf-class .next-class a
+{
+  font-size: 28px;
+}
+.main .navigbar .instractor .stu-id
+{
+    position: absolute;
+    left: 60px;
+}
+.main .navigbar .instractor .stu-name
+{
+    padding-left: 80px;
+}
+}
+/* End Home Page */
+/* ****************************************************************** */
+/* Start manage Student */
+.main .main-admin .box-student
+{
+    position: relative;
+    width: 800px;
+    height: 525px;
+    margin: 20px;
+    padding: 10px;
+    border: none;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    box-sizing: border-box;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.main .main-admin .box-student form
+{
+    position: relative;
+    border: 1px solid black;
+    width: 100%;
+    height: 250px;
+    margin: 7px 0;
+    padding: 22px;
+    border-radius: 4px;  
+    transition: 0.5s;  
+}
+.main .main-admin .box-student form h1
+
+{
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+}
+.main .main-admin .box-student form label
+{
+    color: #fff;
+}
+@media (max-width: 524px)
+{
+    .main .main-admin .box-student form h1
+    {
+        font-size: 22px;
+    }
+    .main .main-admin .box-student form input
+    {
+        margin-top:6px;
+    }
+}
+.main .main-admin .box-student form input
+{
+
+    color: #0e0e0e;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    transition: 0.5s;  
+}
+.main .main-admin .box-student form label
+{
+    font-weight: bold;
+}
+.main .main-admin .box-student form label.stu-co
+{
+    padding-right: 28px;
+}
+.main .main-admin .box-student form label,
+.main .main-admin .box-student form input
+{
+    
+    padding: 14px;
+    margin-top: 18px;
+    
+}
+.main .main-admin .box-student form input[type="text"]:focus
+{
+    border: 1px solid #651111;
+    transition: 0.5s;
+}
+.main .main-admin .box-student form input[type="button"]
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 15px 20px;
+    margin: 0 10px 10px 0;
+    cursor: pointer;
+}
+.main .main-admin .box-student form.record-st
+{
+    background: #0d2852;
+}
+
+.main .main-admin .box-student form.record-st input[type="button"]
+{
+    background: #183153;
+    color: #fff;
+}
+.main .main-admin .box-student form.kick-st
+{
+    background: #531818;
+}
+.main .main-admin .box-student form.kick-st input[type="button"]
+{
+    background: #2b0d0d;
+    color: #fff;
+}
+/* ************************************************* */
+
+/* Start Manage ClassRoom */
+
+.main .main-admin .box-mangroom
+{
+    position: relative;
+    width: 800px;
+    height: 525px;
+    margin: 20px;
+    padding: 10px;
+    border: none;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    box-sizing: border-box;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.main .main-admin .box-mangroom .class-controls
+{
+    display: flex;
+    flex-direction: row;
+    margin-top: 25px;
+}
+.main .main-admin .box-mangroom .class-controls a
+{
+    position: relative;
+    text-decoration: none;
+    color: #fff
+}
+
+.main .main-admin .box-mangroom .class-controls a span
+{
+    position: relative;
+    padding: 6px 10px;
+    border-radius: 3px;
+    font-size: 18px;
+    padding: 10px 15px;
+    margin: 0 22px;
+    transition: 0.5s;
+}
+.main .main-admin .box-mangroom .class-controls .start-new a span
+{
+    background: #123771;
+}
+.main .main-admin .box-mangroom .class-controls .start-new a span:hover
+{
+    background: #091b38;
+}
+.main .main-admin .box-mangroom .class-controls .manage-class a span
+{
+    background: #651f1f;
+}
+.main .main-admin .box-mangroom .class-controls .manage-class a span:hover
+{
+    background: #2b0d0d;
+}
+.main .main-admin .box-mangroom .class-board
+{
+    position: relative;
+    width: 95%;
+    height: 400px;
+    background: #c5c5c5;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+.main .main-admin .box-mangroom .class-board span
+{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    font-size: 20px;
+}
+@media (max-width: 524px)
+{
+    .main .main-admin .box-mangroom .class-controls a span
+    {
+        margin: 0 10px;
+    }
+}
+/* ************************************************** */
+/* Start On going Class */
+.main .main-admin .box-ongoing
+{
+    position: relative;
+    width: 800px;
+    height: 525px;
+    margin: 20px;
+    padding: 10px;
+    border: none;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    box-sizing: border-box;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #fff;
+}
+.main .main-admin .box-ongoing .box-info
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+   display: grid;
+   grid-template-rows: repeat(3, 180px 163px 162px );
+}
+.main .main-admin .box-ongoing .box-info .head-going 
+{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+}
+.main .main-admin .box-ongoing .box-info .head-going .going-title
+{
+    padding: 20px;
+}
+.main .main-admin .box-ongoing .box-info .head-going .going-title h2
+{
+    color: #531818;
+    font-size: 30px;
+    font-weight: bold;
+    border-bottom: 1px solid #531818;
+}
+.box-ongoing .box-info .head-going .qr-field
+{
+    width: 210px;
+}
+ .box-ongoing .box-info .head-going .qr-field .qr-img
+ {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+ }
+ .box-ongoing .box-info .head-going .qr-field .qr-img img
+ {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     left: 0;
+     top: 0;
+ }
+ .box-ongoing .box-info .head-going .qr-field .qr-control
+ {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+ }
+ .box-ongoing .box-info .head-going .qr-field .qr-control a
+ {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+ }
+ .box-ongoing .box-info .head-going .qr-field .qr-control a span
+ {
+    position: relative;
+    padding: 6px 10px;
+    background: #531818;
+    border-radius: 3px;
+ }
+ .box-ongoing .box-info .head-going .qr-field .qr-control .requst-qr a span
+ {
+    background: #0d2852;
+ }
+ .box-ongoing .box-info .attend
+ {
+     display: flex;
+     flex-direction: column;
+     width: 60%;
+     border-bottom: 1px solid black;
+ }
+ .box-ongoing .box-info .attend div
+{
+    margin: 10px 0;
+    
+}
+.box-ongoing .box-info .attend div span
+{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 22px;
+}
+.box-ongoing .box-info .attend .current-atd span
+{
+    color: green ;
+}
+.box-ongoing .box-info .attend .full-atd span
+{
+    color: #1a62c3;
+}
+.box-ongoing .box-info .last-c
+{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+.box-ongoing .box-info .last-c .class-struct div
+{
+margin: 20px 0;
+font-size: 18px;
+}
+.box-ongoing .box-info .last-c .next-ctrl
+{
+    position: absolute;
+    bottom: 30px;
+    right: 0;
+}
+.box-ongoing .box-info .last-c .next-ctrl a
+{
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+}
+.box-ongoing .box-info .last-c .next-ctrl a span
+{
+    padding: 10px 14px;
+    background: #531818;
+}
+@media (max-width: 620px)
+{
+    .main .main-admin .box-ongoing .box-info
+    {
+        overflow-x: auto;
+    }
+    .main .main-admin .box-ongoing .box-info .head-going
+    {
+        grid-template-columns: repeat(1, auto);
+    }
+    .box-ongoing .box-info .head-going .qr-field .qr-img
+    {
+        width: 200px;
+        height: 200px;
+    }
+}
+/* ************************************************************************* */
+/* Start next class */
+
+.main .main-admin .box-nextclass
+{
+    position: relative;
+    width: 800px;
+    height: 525px;
+    margin: 20px;
+    padding: 10px;
+    border: none;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    box-sizing: border-box;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #fff;
+}
+.main .main-admin .box-nextclass .box-infoclass
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+   display: grid;
+   grid-template-rows: repeat(3, auto );
+   background: rgb(83 24 24 / 14%);;
+}
+.main .main-admin .box-nextclass .box-infoclass .head-class
+{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+.main .main-admin .box-nextclass .box-infoclass .head-class .class-title
+{
+    padding: 20px;
+}
+.main .main-admin .box-nextclass .box-infoclass .head-class .class-title h2
+{
+    font-size: 28px;
+    font-weight: bold;
+    color: #531818;
+}
+.main .main-admin .box-nextclass .box-infoclass .head-class .hall-numb
+{
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+
+}
+.main .main-admin .box-nextclass .box-infoclass .head-class .hall-numb span
+{
+    font-size: 18px;
+    font-weight: bold;
+    color: #0d2852;
+}
+.main .main-admin .box-nextclass .box-infoclass .center-class div
+{
+    padding: 10px 0;
+}
+.main .main-admin .box-nextclass .box-infoclass .center-class div span
+{
+ font-size: 18px;
+ font-weight: bold;
+}
+.main .main-admin .box-nextclass .box-infoclass  .changer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.main .main-admin .box-nextclass .box-infoclass  .changer div a
+{
+    text-decoration: none;
+    color: #fff;
+
+}
+.main .main-admin .box-nextclass .box-infoclass  .changer div a span
+{
+    padding: 10px 14px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin:10px;
+    transition: 0.5s;
+}
+.main .main-admin .box-nextclass .box-infoclass  .changer .change-sub a span
+{
+    background: #0d2852;
+}
+.main .main-admin .box-nextclass .box-infoclass  .changer .change-sub a span:hover
+{
+    background: #07172f;
+    
+}
+.main .main-admin .box-nextclass .box-infoclass  .changer .change-hall a span
+{
+    background: #651111;
+}
+.main .main-admin .box-nextclass .box-infoclass  .changer .change-hall a span:hover
+{
+    background: #400a0a ;
+}

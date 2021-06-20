@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Student</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/adminstyle.css">
+</head>
+<body>
+    <div class="cont">
+        <!--Start left Side-->
+        <div class="sidbar">
+            <ul>
+                <li class="brand">
+                    <a href="admin.html">
+                        <span class="icon">F</span>
+                        <span class="title"><h1>fras</h1></span>
+                    </a>
+                    
+                </li>
+                <li>
+                    <a href="managStudent.html">
+                        <span class="icon"><i class="fas fa-user-cog"></i></span>
+                        <span class="title">Manage Student</span></a>
+                </li>
+                <li>
+                    <a href="managclass.html">
+                        <span class="icon"><i class="fas fa-cogs"></i></span>
+                        <span class="title">Manage classroom</span>
+                    </a>
+                    
+                </li>
+            </ul>
+        </div>
+        <!--End left Side-->
+        <!--**********************************************************************-->
+        <!-- Start Right Side -->
+        <div class="main">
+                    <!-- Start Nav bar -->
+          <div class="navigbar">
+              <div class="toggle" onclick="toggleMenu()">
+                 <i class="fas fa-bars"></i>
+              </div>
+              <div class="instractor">
+                   <div class="stu-id">
+                        <span>Stu ID : </span>
+                        <span></span>
+                   </div>
+                   <div class="stu-name">
+                         <span>Stu Name : </span>
+                         <span></span>
+                   </div>
+              </div>
+              <div class="logout">
+                  <a href="#">
+                      <span>Logout</span>
+                  </a>
+              </div>
+          </div>
+          <!-- End Nav bar -->
+          <!-- ***************************************************************** -->
+          <!-- Start Struc Main-->
+           <div class="main-admin">
+               <div class="box-student">
+                   <form class="record-st">
+                        <h1>Record a student attendance</h1>
+                        <label for="codeSt">Class Code : </label>
+                        <input type="text" name="codeSt" placeholder="Class Code"><br>
+                        <label for="stuSt" class="stu-co">Stu Code : </label>
+                        <input type="text" name="stuSt"  placeholder="Stu Student">
+                      <input type="button" value="Record" name="btn-record">
+                   </form>
+                   <!-- Kick -->
+                   <form class="kick-st">
+                    <h1> kick a student from a class </h1>
+                    <label for="codeSt">Class Code : </label>
+                    <input type="text" name="codeSt" placeholder="Class Code"><br>
+                    <label for="stuSt" class="stu-co">Stu Code : </label>
+                    <input type="text" name="stuSt"  placeholder="Stu Student">
+                    <input type="button" value="Kick" name="btn-kick" >   
+                   </form>
+               </div>
+           </div>
+          <!-- End Struc -->
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

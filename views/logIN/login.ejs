@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRAS</title>
+    <link rel="shortcut icon" href="../logIN/img/icon.png">
+    <link rel="stylesheet" href="../logIN/css/all.css">
+    <link rel="stylesheet" href="../logIN/css/loginStyle.css">
+</head>
+<body>
+    <section>
+        <nav>
+            <div class="container">
+                <div class="logo">
+                    <span>Thebes Academy</span>
+                </div>
+                <div class="tele">
+                    <i class="fas fa-phone"></i>
+                    <span>: 0238093013 - 0238093122</span>
+                </div>
+            </div>
+        </nav>
+        <!-- Start Center -->
+        <div class="center">
+            <div class="container">
+                <div class="fields">
+                    <div class="back-img">
+                        <img src="../logIN/img/back.jpg" class="img-one" title="FRAS">
+                        <img src="../logIN/img/back2.jpg" class="img-two" title="FRAS">
+                    </div>
+                    <div class="log-forms">
+                        <!-- Sign In fields -->
+                        <div class="signfield signin-f">
+                            <form action="/sginIN">
+                                <header>Sign in</header>
+                                <div class="user-field">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" name="user_in" placeholder="Username" alt="">
+                                </div>
+                                <div class="password-field">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="password" name="pass_in" placeholder="Password" alt="">
+                                </div>
+                                <div class="action-btn">
+                                    <div class="signIn-action">
+                                        <input type="submit" name="signin-log" value="Login">
+                                    </div>
+                                    <div class="fras-login">
+                                        <input type="submit" name="fras-log" value="FRAS Login">
+                                    </div>
+                                </div>
+
+                                <div class="link">
+                                    <span>Don't have an account?<a href="#"    onclick="go();">Sign up</a></span>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Sign Up fields -->
+                        <div class="signfield signup-f">
+                            <form action="/sginUp" method="POST">
+                                <header>Sign up</header>
+                                <div class="stu-field">
+                                    <input type="text" name="stuName" placeholder="Enter Stu Name" alt="">
+                                </div>
+                                <div class="stu-field">
+                                    <input type="text" name="stuID" placeholder="Enter Stu ID" alt="">
+                                </div>
+                                <div class="password-field">
+                                    <input type="password" name="password" placeholder="Enter Password" alt="">
+                                </div>
+                                <div class="uni-acc">
+                                    <input type="email" name="Ua" placeholder="Enter Univercity Code">
+                                </div>
+                                <div class="admincode">
+                                    <input type="password" name="adminCode" placeholder="Enter Admin Code" alt="">
+                                </div>
+                                <div class="signup-action">
+                                    <input type="submit" name="signup-log" value="Sign up">
+                                </div>
+                                <div class="link">
+                                    <span>Already have an account? <a href="#"  onclick="go();">Sign In</a></span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="../logIN/js/jslogin.js"></script>
+</body>
+</html>

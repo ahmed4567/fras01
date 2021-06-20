@@ -1,0 +1,15 @@
+GET http://localhost:3030/
+
+###
+POST http://localhost:3030/sginUp
+###
+Content-Type: application/json
+
+{
+    "stuName":"s1111tu",
+    "stuID": "a1s111d",
+    "password": "11p1assword",
+    "Ua": "1U11a",
+    "adminCode": "a1dm111inCode"
+}
+
