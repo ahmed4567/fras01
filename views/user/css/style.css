@@ -1,0 +1,477 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.cont
+{
+    position: relative;
+    width: 100%;
+}
+.cont .sidbar
+{
+position: fixed;
+width: 250px;
+height: 100%;
+background: #183153;
+transition: 0.5s;
+overflow: hidden;
+}
+.cont .sidbar.active
+{
+    width: 60px;
+}
+.cont .sidbar ul
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;   
+}
+.cont .sidbar ul li
+{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 1);
+    transition: 0.5s;
+}
+.cont .sidbar ul li:hover
+{ 
+    background: #1569C7;
+}
+.cont .sidbar ul li.brand
+{
+    text-transform: uppercase;
+    text-align: center;
+    background: transparent;
+}
+.cont .sidbar ul li.brand a:hover
+{
+    color: #1569C7;
+}
+.cont .sidbar ul li.brand .icon
+{
+    opacity: 0;
+    font-size: 32px;
+    font-weight: bold;
+    transition: 0.5s;
+}
+.cont .sidbar ul li.brand .icon.active 
+{
+  
+    opacity: 1;
+}
+.cont .sidbar ul li a
+{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+
+}
+.cont .sidbar ul li a .icon
+{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+
+}
+.cont .sidbar ul li a .icon .fas
+{
+    color: #fff;
+    font-size: 25px;
+}
+.cont .sidbar ul li a .title
+{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+.cont .sidbar ul li:hover
+{
+    padding-left: 15px;
+}
+/* Main */
+.main
+{
+    position: absolute;
+    width: calc(100% - 250px);
+    left: 250px;
+    min-height: 100vh;
+    background: #f5f5f5;
+    transition: 0.5s;
+}
+.main.active 
+{
+    width: calc(100% - 60px);
+    left: 60px;
+}
+.main .navigbar
+{
+    width: 100%;
+    height: 60px;
+    background: #183153;
+    padding: 0 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+}
+.main .navigbar .toggle
+{
+   position: relative;
+   width: 60px;
+   height: 60px;
+   cursor: pointer;
+   transition: 0.5s;
+}
+.main .navigbar .toggle.active
+{
+    z-index: 99999;
+    right: 0;
+}
+.main .navigbar .toggle i
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    font-size: 24px;
+    line-height: 60px;
+    text-align: center;
+    color: #fff;
+    transition: 0.5s;
+}
+.main .navigbar .instractor
+{
+    display: flex;
+    color: #fff;
+}
+
+.main .navigbar .instractor .stu-id
+{
+    padding-right: 50px;
+}
+.main .navigbar .logout
+{
+    position: relative;
+    transition: 0.5s;
+}
+.main .navigbar .logout a
+{
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+   
+}
+.main .navigbar .logout a span
+{
+
+    position: relative;
+    padding: 6px 10px;
+    background: #2364bd;
+    border-radius: 3px;
+}
+/* Start Struct */
+.main .main-user
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.main .main-user .inf-class
+{
+    position: relative;
+   width: 800px;
+   height: 460px;
+   margin: 20px;
+}
+.main .main-user .inf-class .going-class
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 160px;
+    background: #183153;
+
+}
+.main .main-user .inf-class .next-class
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60%;
+    height: 160px;
+    background: #531818;
+}
+.main .main-user .inf-class .going-class,
+.main .main-user .inf-class .next-class
+{
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+.main .main-user .inf-class .going-class a,
+.main .main-user .inf-class .next-class a
+{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    transition: 0.5s;
+}
+.main .main-user .inf-class .going-class a:hover
+{
+    color:#0d2852;
+}
+.main .main-user .inf-class .next-class a:hover
+{
+    color:#651111;
+}
+@media (max-width: 815px)
+{
+    .cont .sidbar
+{
+    width: 60px;
+    transition: all ease-in-out 0.5s;
+}
+.cont .sidbar ul li.brand .icon
+{
+    opacity: 1;
+}
+.cont .sidbar.active
+{
+    width: 100%;
+    z-index: 1000;
+}
+.main 
+{
+    width: calc(100% - 60px);
+    left: 60px;
+
+}
+.main .navigbar .toggle.active
+{
+    order: 3;
+    
+}
+.main .main-user .inf-class .going-class a,
+ .main .main-user .inf-class .next-class a
+{
+  font-size: 28px;
+}
+.main .navigbar .instractor .stu-id
+{
+    position: absolute;
+    left: 60px;
+}
+.main .navigbar .instractor .stu-name
+{
+    padding-left: 80px;
+}
+}
+/* End Home Page */
+/* ****************************************************************** */
+/* Start join class */
+.main-join
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.inf-join
+{
+    position: relative;
+    width: 800px;
+    height: 525px;
+    margin: 20px;
+    border: none;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    box-sizing: border-box;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #c5c5c5;
+}
+.main-join .inf-join .scan-control
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 40px;
+}
+.main-join .inf-join .scan-control .scn-fc,
+.main-join .inf-join .scan-control .scn-qr
+{
+    padding: 40px;
+}
+.main-join .inf-join .scan-control .scn-fc a,
+.main-join .inf-join .scan-control .scn-qr a
+{
+    text-decoration: none;
+    color: #fff;
+}
+.main-join .inf-join .scan-control .scn-fc a span,
+.main-join .inf-join .scan-control .scn-qr a span
+{
+   
+    padding: 15px 35px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+}
+.main-join .inf-join .scan-control .scn-fc a span
+{
+    background: #183153;
+}
+.main-join .inf-join .scan-control .scn-qr a span
+{
+    background: #531818;
+}
+.main-join .inf-join .scn-box
+{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+}
+.main-join .inf-join .scn-box .scn-aria
+{
+    position: relative;
+    width: 300px;
+    height: 300px;
+border: 1px solid black;
+}
+.main-join .inf-join .scn-box .scn-aria img
+{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+@media (max-width: 815px)
+{
+    .main-join .inf-join .scan-control
+    {
+        margin: 5px;
+    }
+}
+/* End Main Join */
+/* *********************************************************** */
+/* Start Main Face */
+
+.main-face
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.inf-face
+{
+    position: relative;
+    width: 800px;
+    height: 525px;
+    margin: 20px;
+    border: none;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    box-sizing: border-box;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #c5c5c5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-face .inf-face .face-cont
+{
+    position: relative;
+    width: 95%;
+    height: 92%;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    outline: none;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+}
+.main-face .inf-face .face-cont .sidebar-face
+{
+    position: absolute;
+    width: 145px;
+    height: 100%;
+    background: #ddd;
+    border-right: 1px solid #183153 ;
+    overflow: hidden;
+
+}
+.inf-face .face-cont .sidebar-face ul
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;   
+}
+.inf-face .face-cont .sidebar-face ul li
+{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid #183153;
+    outline: none;
+    transition: 0.5s;
+}
+.inf-face .face-cont .sidebar-face ul li a
+{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #183153;
+     transition: 0.5s;
+}
+.inf-face .face-cont .sidebar-face ul li a span
+{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+.inf-face .face-cont .sidebar-face ul li:hover
+{
+    background: #183153;
+}
+.inf-face .face-cont .sidebar-face ul li:hover a
+{
+    color: #fff;
+}
+.inf-face .face-cont .face-box
+{
+    position: absolute;
+    left: 145px;
+    width: calc(100% - 145px);
+    height: 100%;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
