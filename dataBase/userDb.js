@@ -26,8 +26,8 @@ const userSchema = new mongo.Schema({
          
     }
 
-})
+},{collection:"newUserS"})
 
 
-const Model = mongo.model("userSchema", userSchema)
+const Model = mongo.model("user", userSchema,)
 module.exports = Model
