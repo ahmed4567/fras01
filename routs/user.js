@@ -1,5 +1,7 @@
 const expres = require("express")
 const router = expres.Router()
+const mongo = require('mongoose')
+const mongodb = require('mongodb')
 
 router.get('/', (req, res) => {
     res.render('user/Home.ejs',)
