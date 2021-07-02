@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live E-learn System</title>
+    <link rel="stylesheet" href="css/fontawesom.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container-form">
+        <div class="log-forms">
+            <!-- Sign In fields -->
+            <div class="signfield signin-f">
+                <form action="/signIN" method="POST" >
+                    <header>Sign in</header>
+                    <div class="user-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" name="username" placeholder="Username" alt=""required>
+                    </div>
+                    <div class="password-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" name="password" placeholder="Password" alt="" required>
+                    </div>
+                    <div class="action-btn">
+                        <div class="signIn-action">
+                            <input type="submit" name="signin-log" value="Login">
+                        </div>
+                    </div>
+
+                    <div class="link">
+                        <span>Don't have an account?<a href="#" onclick="mode();">Sign up</a></span>
+                    </div>
+                </form>
+            </div>
+            <!-- Sign Up fields -->
+            <div class="signfield signup-f">
+                <form id="signUP" method="POST" >
+                    <header>Sign up</header>
+                    <div class="stu-field">
+                        <input type="text" name="username" placeholder="Enter Stu" alt="" required>
+                    </div>
+                    <div class="password-field">
+                        <input type="password" name="password" placeholder="Enter Password" alt="" required>
+                    </div>
+                    <div class="uni-acc">
+                        <input type="email" name="Uc" placeholder="Enter Univercity Code" required>
+                    </div>
+                    <div class="phone">
+                        <input type="number" name="phone" maxlength="11" placeholder="Enter Phone Number" alt="" required>
+                    </div>
+                    <div class="option-radio">
+                        <input type="radio" id="user" name="choose" value="user" onclick="changeSign()"required>
+                        <label for="user">User</label><br>
+                        <input type="radio" id="admin" name="choose" value="admin" onclick="changeSign()" >
+                        <label for="admin">Admin</label><br>
+                    </div>
+                    <div class="signup-action">
+                        <input type="submit" name="signup-log" value="Sign up">
+                    </div>
+                    <div class="link">
+                        <span>Already have an account? <a href="#"  onclick="mode();">Sign In</a></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+          function mode()
+          {
+            let sin = document.querySelector('.signin-f');
+                let up = document.querySelector('.signup-f');
+                sin.classList.toggle('active');
+                up.classList.toggle('active');
+          }
+        function changeSign(){
+        if(document.getElementById("user").checked){
+            document.getElementById("signUP").setAttribute("action","/SginUp")
+        }else{
+            document.getElementById("signUP").setAttribute("action","/AdminSginUp")
+        }  
+    }
+    </script>
+</body>
+</html>

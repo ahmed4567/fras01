@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin</title>
+    <link rel="stylesheet" href="css/fontawesom.min.css">
+    <link rel="stylesheet" href="css/styleadmin.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.10.1/qs.min.js" integrity="sha512-aTKlYRb1QfU1jlF3k+aS4AqTpnTXci4R79mkdie/bp6Xm51O5O3ESAYhvg6zoicj/PD6VYY0XrYwsWLcvGiKZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src='index.js'></script>
+</head>
+<body>
+    <div class="badge-wrap">
+        <div class="sidebar-left">
+            <div class="logo">
+                <a href="admin.html">
+                    <span class="icon">E</span>
+                    <span class="title">E-Learning</span>
+                </a>
+            </div>
+            <div class="info-prof">
+              <div class="img-prof">
+                  <img src="icon.png">
+              </div>
+              <div class="name-prof">
+                  <span id="...">Admin</span>   <!--Change Name of admin with contact name user-->
+              </div>
+            </div>
+  
+            <div class="sidebar-link">
+                <ul>
+                    <li>
+                        <a href="managecours.html">
+                           <span class="icon"><i class="fas fa-school"></i></span> 
+                            <span class="title">Manage Course</span>
+                        </a>
+                    </li>
+                    <li>
+                      <a href="managestudent.html">
+                          <span class="icon"><i class="fas fa-user-cog"></i></span> 
+                          <span class="title">Manage Student</span>
+                      </a>
+                  </li>
+                  <li>
+                    <a href="livestream.html">
+                        <span class="icon"><i class="fas fa-desktop"></i></span> 
+                        <span class="title">Manage LiveStream</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="adminprof.html">
+                        <span class="icon"><i class="fas fa-user"></i></span> 
+                        <span class="title">Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-sign-out-alt"></i></span> 
+                        <span class="title">Log out</span>
+                    </a>
+                </li>
+                </ul>
+            </div>
+        </div>
+        <!-- START CENTER -->
+        <div class="main">
+            <div class="navigation">
+                <div class="toggle" id="toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="notfication">
+                  <span class="icon" id="notfication"><i class="fas fa-bell"></i></span>
+                   <div class="notfication-container">
+                       <div class="req">
+                           <!-- Link for Student Join to class-->
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+  
+                       </div>
+                   </div>
+              </div>
+            </div>
+            <div class="main-content">
+                 <div class="livestream-container">
+                  <button id='my-button'>Start Stream</button>
+                  <video autoplay id="video"></video>
+                 </div>
+
+                 <div class="chat-area">
+                <div class="chat-container">
+                    <header class="chat-header">
+                      <h1><i class="fas fa-smile"></i> ChatCord</h1>
+                      <button id="...">Leave Room</button>
+                    </header>
+                    <div class="chat-main">
+
+                      <div class="chat-sidebar">
+                        <div class="room-chat">
+                          <span><i class="fas fa-comments"></i> Room Name:</span>
+                          <span id="room-name">JavaScript</span>
+                        </div>
+                        <div class="users-chat">
+                          <span><i class="fas fa-users"></i> Users : </span>
+                          <ul id="users">
+                            <li>Remon</li>
+
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="chat-messages">
+                       
+                      </div>
+                    </div>
+
+                    <div class="chat-form-container">  
+                      <form id="chat-form">
+                        <input id="msg" type="text" placeholder="Enter Message" required autocomplete="off"/>
+                        <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <script src="js/javaadmin.js"></script>
+      <script src="js/chatJs"></script>
+</body>
+</html>

@@ -4,82 +4,132 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FRAS Admin</title>
-    <link rel="stylesheet" href="../admin/css/all.min.css">
-    <link rel="stylesheet" href="../admin/css/adminstyle.css">
+    <title>admin</title>
+    <link rel="stylesheet" href="css/fontawesom.min.css">
+    <link rel="stylesheet" href="css/styleadmin.css">
 </head>
 <body>
-    <div class="cont">
-        <!--Start left Side-->
-        <div class="sidbar">
-            <ul>
-                <li class="brand">
-                    <a href="admin.html">
-                        <span class="icon">F</span>
-                        <span class="title"><h1>fras</h1></span>
+    <div class="badge-wrap">
+        <div class="sidebar-left">
+            <div class="logo">
+                <a href="/admin/">
+                    <span class="icon">E</span>
+                    <span class="title">E-Learning</span>
+                </a>
+            </div>
+            <div class="info-prof">
+              <div class="img-prof">
+                  <img src="icon.png">
+              </div>
+              <div class="name-prof">
+                  <span id="..."><%=username%></span>   <!--Change Name of admin with contact name user-->
+              </div>
+            </div>
+  
+            <div class="sidebar-link">
+                <ul>
+                    <li>
+                        <a href="/admin/mange-courses">
+                           <span class="icon"><i class="fas fa-school"></i></span> 
+                            <span class="title">Manage Course</span>
+                        </a>
+                    </li>
+                    <li>
+                      <a href="/admin/manage-student">
+                          <span class="icon"><i class="fas fa-user-cog"></i></span> 
+                          <span class="title">Manage Student</span>
+                      </a>
+                  </li>
+                  <li>
+                    <a href="/admin/live-class">
+                        <span class="icon"><i class="fas fa-desktop"></i></span> 
+                        <span class="title">Start LiveStream</span>
                     </a>
-                    
                 </li>
                 <li>
-                    <a href="managStudent.html">
-                        <span class="icon"><i class="fas fa-user-cog"></i></span>
-                        <span class="title">Manage Student</span></a>
+                    <a href="/admin/profile">
+                        <span class="icon"><i class="fas fa-user"></i></span> 
+                        <span class="title">Profile</span>
+                    </a>
                 </li>
                 <li>
-                    <a href="managclass.html">
-                        <span class="icon"><i class="fas fa-cogs"></i></span>
-                        <span class="title">Manage classroom</span>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-sign-out-alt"></i></span> 
+                        <span class="title">Log out</span>
                     </a>
-                    
                 </li>
-            </ul>
+                </ul>
+            </div>
         </div>
-        <!--End left Side-->
-        <!--**********************************************************************-->
-        <!-- Start Right Side -->
+        <!-- START CENTER -->
         <div class="main">
-                    <!-- Start Nav bar -->
-          <div class="navigbar">
-              <div class="toggle" onclick="toggleMenu()">
-                 <i class="fas fa-bars"></i>
-              </div>
-              <div class="instractor">
-                   <div class="stu-id">
-                        <span>Stu ID : </span>
-                        <span></span>
-                   </div>
-                   <div class="stu-name">
-                         <span>Stu Name : </span>
-                         <span></span>
-                   </div>
-              </div>
-              <div class="logout">
-                  <a href="#">
-                      <span>Logout</span>
-                  </a>
-              </div>
-          </div>
-          <!-- End Nav bar -->
-          <!-- ***************************************************************** -->
-          <!-- Start Struc Main-->
-           <div class="main-admin">
-               <div class="inf-class">
-                <div class="going-class">
-                    <a href="onGoingRoom.html">
-                        <span>on going class</span>
-                    </a>
+            <div class="navigation">
+                <div class="toggle" id="toggle">
+                    <i class="fas fa-bars"></i>
                 </div>
-                <div class="next-class">
-                    <a href="nextclass.html">
-                        <span>next class</span>
-                        
-                    </a>
+                <div class="notfication">
+                  <span class="icon" id="notfication"><i class="fas fa-bell"></i></span>
+                   <div class="notfication-container">
+                       <div class="req">
+                           <!-- Link for Student Join to class-->
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+  
+                       </div>
+                   </div>
+              </div>
+            </div>
+            <div class="main-content">
+                <div class="main-table">
+                    <header><h2>your courses</h2></header>
+                    <div class="courses-table">
+                        <button type="submit" onclick=insertRow()></button>
+                        <table id="class-table">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Number of Student</td>
+                                    <td>Start</td>
+                                    <td>End</td>
+                                </tr>
+                            </thead>
+                            <tbody>   <!--Here  link database from manage class-->
+                                <tr>
+                                    <td>Ai</td>
+                                    <td>15</td> <!--Link database from student of class-->
+                                    <td>Aug, 2021</td>  <!--link database from manage class-->
+                                    <td>Dec, 2021</td>  <!--link database from manage class-->
+                                </tr>
+                                <tr>
+                                  <td>Ai</td>
+                                  <td>30</td> <!--Link database from student of class-->
+                                  <td>Sep, 2021</td>  <!--link database from manage class-->
+                                  <td>Dec, 2021</td>  <!--link database from manage class-->
+                              </tr>
+                              <tr>
+                                  <td>Ai</td>
+                                  <td>50</td> <!--Link database from student of class-->
+                                  <td>Jun, 2021</td>  <!--link database from manage class-->
+                                  <td>Aug, 2021</td>  <!--link database from manage class-->
+                              </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-               </div>
-           </div>
-          <!-- End Struc -->
+            </div>
         </div>
     </div>
-    <script src="../admin/js/script.js"></script>
+
+      <script src="js/javaadmin.js"></script>
 </body>
 </html>

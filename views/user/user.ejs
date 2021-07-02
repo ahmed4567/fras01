@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/fontawesom.min.css">
+    <link rel="stylesheet" href="css/studentstyle.css">
+</head>
+<body>
+    <div class="badge-wrap">
+        <div class="sidebar-left">
+            <div class="logo">
+                <a href="/user/">
+                    <span class="icon">E</span>
+                    <span class="title">E-Learning</span>
+                </a>
+            </div>
+            <div class="info-prof">
+              <div class="img-prof">
+                  <img src="icon.png">
+              </div>
+              <div class="name-prof">
+                  <span id="...">User</span>   <!--Change Name of admin with contact name user-->
+              </div>
+            </div>
+  
+            <div class="sidebar-link">
+                <ul>
+                    <li>
+                        <a href="/user/mangeCourse">
+                           <span class="icon"><i class="fas fa-school"></i></span> 
+                            <span class="title">Manage Courses</span>
+                        </a>
+                    </li>
+                  <li>
+                    <a href="/user/live-class">
+                        <span class="icon"><i class="fas fa-desktop"></i></span> 
+                        <span class="title">LiveStream</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/user/profile">
+                        <span class="icon"><i class="fas fa-user"></i></span> 
+                        <span class="title">Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/logOut" >
+                        <span class="icon"><i class="fas fa-sign-out-alt"></i></span> 
+                        <span class="title">Log out</span>
+                    </a>
+                </li>
+                </ul>
+            </div>
+        </div>
+        <!-- START CENTER -->
+        <div class="main">
+            <div class="navigation">
+                <div class="toggle" id="toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="main-table">
+                    <header><h2>Courses Info</h2></header>
+                    <div class="courses-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Name Course</td>
+                                    <td>Start</td>
+                                    <td>End</td>
+                                </tr>
+                            </thead>
+                            <tbody>   <!--Here  link database from manage class-->
+                                <tr>
+                                    <td>Ai</td>
+                                    <td>Aug, 2021</td>  <!--link database from manage class-->
+                                    <td>Dec, 2021</td>  <!--link database from manage class-->
+                                </tr>
+                                <tr>
+                                  <td>Ai</td>
+                                  <td>Sep, 2021</td>  <!--link database from manage class-->
+                                  <td>Dec, 2021</td>  <!--link database from manage class-->
+                              </tr>
+                              <tr>
+                                  <td>Ai</td>
+                                  <td>Jun, 2021</td>  <!--link database from manage class-->
+                                  <td>Aug, 2021</td>  <!--link database from manage class-->
+                              </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <script>
+          
+const togglesid = document.getElementById('toggle');
+      togglesid.addEventListener('click', function(){
+          let sideLeft = document.querySelector('.sidebar-left');
+              sideLeft.classList.toggle('active');
+          let main = document.querySelector('.main');
+            main.classList.toggle('active');
+          let logo = document.querySelector('.logo .title');
+              logo.classList.toggle('active');
+              let logoicon = document.querySelector('.logo .icon');
+              logoicon.classList.toggle('active'); 
+      })
+
+
+
+      </script>
+</body>
+</html>

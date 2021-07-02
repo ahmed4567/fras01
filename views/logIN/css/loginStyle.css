@@ -140,8 +140,14 @@ nav .tele
     outline: none;
     box-shadow: none;
     color: #333;
-    background: #f3f3f3;
+    background: #3865a11c;
     font-size: 16px;
+    transition: 0.5s;
+}
+.log-forms .signfield form input:focus
+{
+   outline: 1px solid #3866a1;
+   background: #fff;
 }
 .log-forms .signfield form .action-btn
 {
@@ -174,13 +180,6 @@ nav .tele
     background-image: linear-gradient(to right, #3866a1 0%, #79CBCA  51%, #3866a1  100%);
 
 }
-
-.log-forms .signfield.signup-f form input[type="submit"]
-{
-    background-image: linear-gradient(to right, #8f949e 0%, #D7DDE8  51%, #8f949e  100%);
-    color: gray;
-
-}
 .log-forms .signfield.signin-f form input[type="submit"]:hover
 
 {
@@ -189,6 +188,23 @@ nav .tele
             text-decoration: none;
             color: #3866a1;
 }
+/* Sign Up style */
+.log-forms .signfield.signup-f form input
+{
+    background: #8f949e2d;
+}
+.log-forms .signfield.signup-f form input:focus
+{
+    outline: 1px solid #8f949e;
+    background: #fff;
+}
+.log-forms .signfield.signup-f form input[type="submit"]
+{
+    background-image: linear-gradient(to right, #8f949e 0%, #D7DDE8  51%, #8f949e  100%);
+    color: gray;
+
+}
+
 .log-forms .signfield.signup-f form input[type="submit"]:hover
 {
     background-position: right center; /* change the direction of the change here */

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Courses</title>
+    <link rel="stylesheet" href="css/fontawesom.min.css">
+    <link rel="stylesheet" href="css/styleadmin.css">
+</head>
+<body>
+    <div class="badge-wrap">
+        <div class="sidebar-left">
+            <div class="logo">
+                <a href="/admin">
+                    <span class="icon">E</span>
+                    <span class="title">E-Learning</span>
+                </a>
+            </div>
+            <div class="info-prof">
+              <div class="img-prof">
+                  <img src="icon.png">
+              </div>
+              <div class="name-prof">
+                  <span id="..."><%=username%></span>   <!--Change Name of admin with contact name user-->
+              </div>
+            </div>
+  
+            <div class="sidebar-link">
+                <ul>
+                    <li>
+                        <a href="/admin/mange-courses">
+                           <span class="icon"><i class="fas fa-school"></i></span> 
+                            <span class="title">Manage Course</span>
+                        </a>
+                    </li>
+                    <li>
+                      <a href="/admin/manage-student">
+                          <span class="icon"><i class="fas fa-user-cog"></i></span> 
+                          <span class="title">Manage Student</span>
+                      </a>
+                  </li>
+                  <li>
+                    <a href="/admin/live-class">
+                        <span class="icon"><i class="fas fa-desktop"></i></span> 
+                        <span class="title">Manage LiveStream</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/profile">
+                        <span class="icon"><i class="fas fa-user"></i></span> 
+                        <span class="title">Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-sign-out-alt"></i></span> 
+                        <span class="title">Log out</span>
+                    </a>
+                </li>
+                </ul>
+            </div>
+        </div>
+        <!-- START CENTER -->
+        <div class="main">
+            <div class="navigation">
+                <div class="toggle" id="toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="notfication">
+                  <span class="icon" id="notfication"><i class="fas fa-bell"></i></span>
+                   <div class="notfication-container">
+                       <div class="req">
+                           <!-- Link for Student Join to class-->
+                       <span>3 Student request Ai course</span>
+  
+                       </div>
+                   </div>
+              </div>
+            </div>
+            <div class="main-content">
+                <!-- Start Manage Cours -->
+                <div class="manage-courses">
+                    <div class="action-cours">
+                        <form action="/addClass" method="POST">
+                            <div class="area-cours">
+                                <input type="text" name="className" id="cval" placeholder="Enter Course Name" required>
+                            </div>
+                            <div>
+                                <input type="time" name="time" id="" placeholder="Enter when the cours start">
+                            </div>
+                            <br>
+                            <div class="add">
+                                <i class="fas fa-plus"></i>
+                                <input type="submit" value="Add">
+                            </div>
+                        </form>
+                        <form action="/removeClass" method="POST">
+                            <div class="area-cours">
+                                <input type="text" name="className" id="cval" placeholder="Enter Course Name" required>
+                            </div>
+                            <div class="add">
+                                <i class="fas fa-minus"> </i>
+                                <input type="submit" value="Delete" style="background-color: red; ">
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Start Table -->
+                    <div class="courses-table-manage">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td > Class Name</td>
+                                    <td >Number of Student </td>
+                                    <td >(Delete / start ) cours</td>
+                                </tr>
+                            </thead>
+                            <tbody>   <!--Here  link database from manage class-->
+                                <% for (var i = 0; i < classDb.length; i++) {%>
+                                    <% if (classDb[i] === null){%>
+                                        <% console.log(classDb[i]); %>
+                                    <% }else{  %>  
+                                <tr>
+                                    <td id="className"><%= classDb[i].className %> </td>
+                                    <td id="classStuN"> <%= classDb[i].numperOfStu %> </td>
+
+                                    <td>
+                                        <form class="add-class" action="/admin/live-class"><button id="delete-class" style="background-color: blueviolet;">Start Class</button></form>
+                                        <br>
+                                        
+                                         </tr>
+                                <%}}%>
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <script src="js/javaadmin.js"></script>
+      <script>
+         
+      </script>
+</body>
+</html>

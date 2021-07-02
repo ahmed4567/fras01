@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage courses</title>
+    <link rel="stylesheet" href="css/fontawesom.min.css">
+    <link rel="stylesheet" href="css/studentstyle.css">
+</head>
+<body>
+    <div class="badge-wrap">
+        <div class="sidebar-left">
+            <div class="logo">
+                <a href="user.html">
+                    <span class="icon">E</span>
+                    <span class="title">E-Learning</span>
+                </a>
+            </div>
+            <div class="info-prof">
+              <div class="img-prof">
+                  <img src="icon.png">
+              </div>
+              <div class="name-prof">
+                  <span id="...">User</span>   <!--Change Name of admin with contact name user-->
+              </div>
+            </div>
+  
+            <div class="sidebar-link">
+                <ul>
+                    <li>
+                        <a href="mangstd.html">
+                           <span class="icon"><i class="fas fa-school"></i></span> 
+                            <span class="title">Manage Courses</span>
+                        </a>
+                    </li>
+                  <li>
+                    <a href="livestreamuser.html">
+                        <span class="icon"><i class="fas fa-desktop"></i></span> 
+                        <span class="title">LiveStream</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="userprof.html">
+                        <span class="icon"><i class="fas fa-user"></i></span> 
+                        <span class="title">Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-sign-out-alt"></i></span> 
+                        <span class="title">Log out</span>
+                    </a>
+                </li>
+                </ul>
+            </div>
+        </div>
+        <!-- START CENTER -->
+        <div class="main">
+            <div class="navigation">
+                <div class="toggle" id="toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="setting-course">
+                     
+                     <div class="courses-control">
+                        <div class="courses-option">
+                            <select>
+                                <option>..</option>
+                                <option>Ai</option>
+                                <option>HSI</option>
+                                <option>oop</option>
+                            </select>
+                        </div>
+                         <form>
+                                <div class="requst-cours">
+                                    <input type="submit" value="Requst">
+                                </div>
+                         </form>
+                     </div>
+                       
+                </div>
+                <div class="main-table" id="..."> <!-- Set Id  for student to manage courses-->
+                    <header><h2>Courses Info</h2></header>
+                    <div class="courses-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Name Course</td>
+                                    <td>State</td>
+                                    <td>Leave</td>
+                                </tr>
+                            </thead>
+                            <tbody>   <!--Here  link database from manage class-->
+                                <tr>
+                                    <td>Ai</td>
+                                    <td>Witting</td>  <!--link database from manage class-->
+                                    <td><button id="leave">Leave</button></td>  <!--link database from manage class-->
+                                </tr>
+                                <tr>
+                                    <td>HSI</td>
+                                    <td>OK</td>  <!--link database from manage class-->
+                                    <td><button id="leave">Leave</button></td>  <!--link database from manage class-->
+                                </tr>
+                                <tr>
+                                    <td>OOP</td>
+                                    <td>Witting</td>  <!--link database from manage class-->
+                                    <td><button id="leave">Leave</button></td>  <!--link database from manage class-->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <script>
+          
+const togglesid = document.getElementById('toggle');
+      togglesid.addEventListener('click', function(){
+          let sideLeft = document.querySelector('.sidebar-left');
+              sideLeft.classList.toggle('active');
+          let main = document.querySelector('.main');
+            main.classList.toggle('active');
+          let logo = document.querySelector('.logo .title');
+              logo.classList.toggle('active');
+              let logoicon = document.querySelector('.logo .icon');
+              logoicon.classList.toggle('active'); 
+      })
+
+
+
+      </script>
+</body>
+</html>

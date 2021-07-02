@@ -1,0 +1,644 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; 
+}
+
+a 
+{
+  text-decoration: none; 
+}
+
+li 
+{
+  list-style: none;
+ }
+
+.badge-wrap 
+{
+  width: 100%;
+  overflow-x: hidden !important;
+ }
+
+.sidebar-left 
+{
+  position: fixed;
+  width: 250px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background: #233648;
+  box-shadow: 0 0 8px #e6e6e6;
+  transition: 0.6s;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none; 
+}
+  .sidebar-left::-webkit-scrollbar
+   {
+    display: none; 
+  }
+  .sidebar-left.active 
+  {
+    width: 60px; 
+  }
+  .sidebar-left .logo 
+  {
+    text-align: center;
+    padding: 10px 0;
+    margin-bottom: 50px;
+    transition: 0.6s; 
+  }
+    .sidebar-left .logo span:first-child 
+    {
+      display: none; 
+    }
+      .sidebar-left .logo span:first-child.active 
+      {
+        display: block; 
+      }
+    .sidebar-left .logo span:last-child.active 
+    {
+      display: none; 
+    }
+    .sidebar-left .logo a 
+    {
+      color: #fff; 
+    }
+      .sidebar-left .logo a span 
+      {
+        font-size: 40px;
+        transition: 0.6s; 
+      }
+  .sidebar-left .info-prof 
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px; 
+  }
+    .sidebar-left .info-prof .img-prof 
+    {
+      position: relative;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      overflow: hidden; 
+    }
+      .sidebar-left .info-prof .img-prof img 
+      {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+      }
+    .sidebar-left .info-prof .name-prof 
+    {
+      margin: 10px; 
+    }
+      .sidebar-left .info-prof .name-prof span 
+      {
+        font-size: 18px;
+        color: #fff;
+        line-height: 16px; 
+      }
+  .sidebar-left .sidebar-link 
+  {
+    position: relative; 
+  }
+    .sidebar-left .sidebar-link ul 
+    {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%; 
+    }
+      .sidebar-left .sidebar-link ul li 
+      {
+        position: relative;
+        width: 100%;
+        list-style: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid black;
+        transition: 0.5s; 
+      }
+        .sidebar-left .sidebar-link ul li:hover 
+        {
+          padding-left: 15px;
+         }
+        .sidebar-left .sidebar-link ul li a 
+        {
+          position: relative;
+          display: block;
+          width: 100%;
+          display: flex;
+          color: #fff; 
+        }
+          .sidebar-left .sidebar-link ul li a .icon {
+            position: relative;
+            display: block;
+            min-width: 60px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center; }
+            .sidebar-left .sidebar-link ul li a .icon .fas {
+              color: #fff;
+              font-size: 25px; }
+          .sidebar-left .sidebar-link ul li a .title {
+            position: relative;
+            display: block;
+            padding: 0 10px;
+            height: 60px;
+            line-height: 60px;
+            white-space: nowrap; }
+
+.main {
+  position: absolute;
+  width: calc(100% - 250px);
+  left: 250px;
+  min-height: 100vh;
+  background: #f5f5f5;
+  transition: 0.6s; }
+  .main.active {
+    width: calc(100% - 60px);
+    left: 60px; }
+  .main .navigation {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background: #233648;
+    padding: 0 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s; }
+    .main .navigation .toggle {
+      position: relative;
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+      transition: 0.5s; }
+      .main .navigation .toggle i {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        font-size: 24px;
+        line-height: 60px;
+        text-align: center;
+        color: #fff;
+        transition: 0.5s; }
+    .main .navigation .notfication {
+      position: relative;
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+      transition: 0.5s; }
+      .main .navigation .notfication .icon {
+        position: relative; }
+        .main .navigation .notfication .icon::before {
+          content: '';
+          position: absolute;
+          top: 13px;
+          right: -27px;
+          width: 8px;
+          height: 8px;
+          background-color: red;
+          border-radius: 50%; }
+        .main .navigation .notfication .icon i {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          font-size: 24px;
+          line-height: 60px;
+          text-align: center;
+          color: #fff;
+          transition: 0.5s; }
+      .main .navigation .notfication .notfication-container {
+        position: absolute;
+        width: 351px;
+        height: 400px;
+        padding: 10px;
+        background: #233648;
+        top: 70px;
+        right: 9px;
+        z-index: 8888;
+        border-radius: 6px;
+        cursor: default;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.5s ease-in-out; }
+        .main .navigation .notfication .notfication-container.open {
+          visibility: visible;
+          opacity: 1; }
+        .main .navigation .notfication .notfication-container::before {
+          content: '';
+          position: absolute;
+          top: -4px;
+          right: 30px;
+          width: 20px;
+          height: 20px;
+          background: #233648;
+          transform: rotate(45deg); }
+        .main .navigation .notfication .notfication-container .req {
+          width: 100%;
+          height: 100%;
+          overflow-y: auto;
+          display: flex;
+          flex-direction: column; }
+          .main .navigation .notfication .notfication-container .req span:nth-child(1) {
+            border-top: none; }
+          .main .navigation .notfication .notfication-container .req span {
+            height: 50px;
+            border-top: 1px solid #fff;
+            padding: 20px 5px;
+            font-size: 18px;
+            color: #fff; }
+  .main .main-content {
+    width: 100%;
+    height: 100vh; }
+    .main .main-content .main-table header {
+      margin: 15px 0;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      user-select: none;
+      color: #233648; }
+    .main .main-content .main-table .courses-table {
+      display: grid;
+      height: 401px; }
+      .main .main-content .main-table .courses-table table {
+        margin: 0 10px;
+        border-collapse: collapse;
+        background: #2336484f;
+        text-align: center; }
+        .main .main-content .main-table .courses-table table thead tr td {
+          padding: 20px 0;
+          font-weight: bold;
+          color: #fff;
+          background: #233648;
+          user-select: none; }
+        .main .main-content .main-table .courses-table table tbody tr td {
+          padding: 15px 0;
+          border-bottom: 1px solid #233648; }
+
+@media screen and (max-width: 992px) {
+  .sidebar-left {
+    left: -250px;
+    z-index: 99999; }
+    .sidebar-left.active {
+      left: 0;
+      width: 250px; }
+
+  .main {
+    width: 100%;
+    left: 0; }
+
+  .main .navigation {
+    justify-content: flex-end; }
+
+  .logo span:first-child.active {
+    display: none; }
+  .logo span:last-child.active {
+    display: block; } }
+.manage-courses .action-cours,
+.manage-courses .action-student,
+.manage-stdent .action-cours,
+.manage-stdent .action-student {
+  width: 100%;
+  margin-top: 50px; }
+  .manage-courses .action-cours form,
+  .manage-courses .action-student form,
+  .manage-stdent .action-cours form,
+  .manage-stdent .action-student form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; }
+    .manage-courses .action-cours form div,
+    .manage-courses .action-student form div,
+    .manage-stdent .action-cours form div,
+    .manage-stdent .action-student form div {
+      position: relative; }
+      .manage-courses .action-cours form div input,
+      .manage-courses .action-student form div input,
+      .manage-stdent .action-cours form div input,
+      .manage-stdent .action-student form div input {
+        width: 100%;
+        padding: 12px 14px 12px 35px;
+        margin: 10px;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        color: #333;
+        background: #3865a11c;
+        font-size: 16px;
+        transition: 0.5s; }
+    .manage-courses .action-cours form .add,
+    .manage-courses .action-student form .add,
+    .manage-stdent .action-cours form .add,
+    .manage-stdent .action-student form .add {
+      margin: 0 12px; }
+      .manage-courses .action-cours form .add i,
+      .manage-courses .action-student form .add i,
+      .manage-stdent .action-cours form .add i,
+      .manage-stdent .action-student form .add i {
+        position: absolute;
+        top: 20px;
+        left: 34%;
+        font-size: 21px;
+        color: #fff;
+        user-select: none;
+        cursor: pointer; }
+      .manage-courses .action-cours form .add input,
+      .manage-courses .action-student form .add input,
+      .manage-stdent .action-cours form .add input,
+      .manage-stdent .action-student form .add input {
+        background: #42b72a;
+        color: #fff;
+        cursor: pointer; }
+        .manage-courses .action-cours form .add input:hover,
+        .manage-courses .action-student form .add input:hover,
+        .manage-stdent .action-cours form .add input:hover,
+        .manage-stdent .action-student form .add input:hover {
+          background: #246417; }
+.manage-courses .courses-table-manage,
+.manage-stdent .courses-table-manage {
+  display: grid; }
+  .manage-courses .courses-table-manage table,
+  .manage-stdent .courses-table-manage table {
+    margin: 0 10px;
+    border-collapse: collapse;
+    background: #2336484f;
+    text-align: center; }
+    .manage-courses .courses-table-manage table thead tr td,
+    .manage-stdent .courses-table-manage table thead tr td {
+      padding: 20px 0;
+      font-weight: bold;
+      color: #fff;
+      background: #233648;
+      user-select: none; }
+    .manage-courses .courses-table-manage table tbody tr td,
+    .manage-stdent .courses-table-manage table tbody tr td {
+      padding: 15px 0;
+      border-bottom: 1px solid #233648; }
+      .manage-courses .courses-table-manage table tbody tr td:last-child button,
+      .manage-stdent .courses-table-manage table tbody tr td:last-child button {
+        padding: 10px 14px;
+        background: red;
+        color: #fff;
+        outline: none;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: 0.6s; }
+        .manage-courses .courses-table-manage table tbody tr td:last-child button:hover,
+        .manage-stdent .courses-table-manage table tbody tr td:last-child button:hover {
+          background: #a50202; }
+
+.chprof-fields {
+  margin: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; }
+  .chprof-fields form {
+    position: relative;
+    width: 400px;
+    height: 460px;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 10px;
+    overflow: hidden;
+    transition: 0.5s; }
+    .chprof-fields form div {
+      margin-top: 20px 0; }
+      .chprof-fields form div input {
+        padding: 12px 14px 12px 35px;
+        margin: 10px 0;
+        width: 100%;
+        border: none;
+        color: #000;
+        text-align: justify;
+        outline: none;
+        letter-spacing: 1px;
+        font-size: 16px;
+        background: #23364815;
+        font-weight: normal;
+        border-radius: 3px;
+        font-family: 'Muli', sans-serif;
+        transition: 0.6s; }
+        .chprof-fields form div input:focus {
+          outline: 1px solid #233648; }
+        .chprof-fields form div input[type="submit"] {
+          background: #42b72a;
+          text-align: center;
+          color: #fff;
+          cursor: pointer;
+          width: 40%;
+          outline: none; }
+          .chprof-fields form div input[type="submit"]:hover {
+            background: #246417; }
+
+
+
+
+            /* Start Live Stream Container */
+            .livestream-container
+            {
+              position:relative;
+              width: 95%;
+              min-height: 500px;
+               margin: 10px auto;
+               background:royalblue;
+            }
+            .livestream-container button
+            {
+              position: absolute;
+              top: 0;
+              left: 0;
+              cursor: pointer;
+              z-index: 9;
+              padding: 12px 14px 12px 35px;
+              border: none;
+              outline: none;
+              box-shadow: none;
+              border-radius: 7px;
+              background: #42b72a;
+              color: #fff;
+              cursor: pointer;
+              font-size: 16px;
+              transition: 0.5s;
+              text-align: center;
+            }
+            .livestream-container video
+            {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0;
+              left: 0;
+              z-index: 8;
+            }
+            /* Start Style Chat */
+            .chat-area
+            {
+              position: fixed;
+              bottom: 0;
+              right: 20px;
+              width: 450px;
+              height: 500px;
+              border: none;
+              box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+              z-index: 777;
+              overflow: hidden;
+              transition: 0.5s;
+              
+            }
+            .chat-area.bottom
+            {
+              bottom: -460px;
+              
+            }
+            .chat-container
+            {
+              position: relative;
+              width: 100%;
+              height: 100%;
+            }
+            .chat-container .chat-header
+            {
+              position: relative;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 50px;
+              background: #233648;
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              padding: 10px 8px;
+              cursor: pointer;
+            }
+
+            .chat-container .chat-header h1 
+            {
+              color: #fff;
+              font-size: 25px;
+              line-height: 30px;
+              user-select: none;
+            }
+            .chat-container .chat-header button
+            {
+              padding: 8px 10px;
+              background: red;
+              color: #fff;
+              outline: none;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+              transition: 0.6s;
+            }
+            .chat-container .chat-main
+            {
+              position: relative;
+              width: 100%;
+              height: 100%;
+            }
+            .chat-container .chat-main div 
+            {
+              padding: 10px 6px;
+              font-size: 18px;
+            }
+            .chat-container .chat-main .chat-sidebar
+            {
+              position:absolute;
+              width: 130px;
+              height: 79%;
+              top: 0;
+              left: 0;
+              overflow: hidden;
+              background: #627486;
+              box-shadow: 0 0 8px #e6e6e6;
+              transition: 0.6s;
+              overflow-y: auto;
+            }
+            .chat-container .chat-main .chat-sidebar .room-chat
+            {
+              font-weight: bold;
+              font-size: 16px;
+            }
+
+            .chat-container .chat-main .chat-sidebar .users-chat
+            {
+              display: flex;
+              flex-direction: column;
+              overflow-y: auto;
+            }
+            .chat-container .chat-main .chat-sidebar .users-chat ul
+            {
+              padding-top: 10px;
+              display: flex;
+              flex-direction: column;
+      
+            }
+            .chat-container .chat-main .chat-sidebar .users-chat ul li 
+            {
+              font-size: 16px;
+              padding: 0 5px;
+              color: #fff;
+            }
+            .chat-container .chat-main .chat-messages
+            {
+              position: absolute;
+              width: calc(100% - 130px);
+              height: 79%;
+              padding: 10px 8px;
+              left: 130px;
+                  display: flex;
+                  flex-direction: column;
+                  background: #e4e6eb;
+                  color: #050505;
+                 overflow-x: auto;
+                 overflow-y: auto ;
+            }
+         .chat-form-container
+         {
+           position: absolute;
+           bottom: 0;
+           right: 0;
+           width: 100%;
+         }
+         .chat-form-container  form 
+         {
+           padding: 10px;
+         }
+         .chat-form-container  form  input[type="text"]
+         {
+            padding: 10px 12px;
+            width: 80%;
+            outline: none;
+         }
+         .chat-form-container  form  button
+         {
+          padding: 8px 10px;
+          background: green;
+          color: #fff;
+          outline: none;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: 0.6s;
+         }
+/*# sourceMappingURL=styleadmin.css.map */
+@media screen and (max-width: 477px) {
+  .chat-area
+  {
+    width: 90%;
+  }
+}

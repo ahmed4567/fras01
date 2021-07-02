@@ -11,6 +11,10 @@ const userSchema = new mongo.Schema({
         requierd: true, 
         unique: true 
     },
+    stuFaceId:{
+        type: String, 
+        requierd: false 
+    },
     password: { 
         type: String, 
         requierd: true 
