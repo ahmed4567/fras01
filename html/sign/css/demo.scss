@@ -1,0 +1,233 @@
+// Start Main Style
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a 
+{
+    text-decoration: none;
+}
+body
+{
+    background-image: url(../img/background.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+$maincolor: #233648 ;
+
+// End Main Style
+.container-form
+{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .log-forms
+{
+    position: relative;
+    background:#fff;
+    width: 400px;
+    height: 460px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+    box-sizing: border-box;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: 0.5s;
+
+
+    .signfield
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+   transition: 0.5s;
+
+   form
+{
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    background: #fff;
+    transition: 0.5s;
+    header
+{
+    color: #555;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    padding: 8px 0;
+    text-align: center;
+    text-transform: uppercase;
+    user-select: none;
+}
+input
+{
+    width: 100%;
+    padding: 12px 14px 12px 35px;
+    margin: 9px 0;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    color: #333;
+    background: #3865a11c;
+    font-size: 16px;
+    transition: 0.5s;
+    &:focus
+    {
+       outline: 1px solid $maincolor;
+       background: #fff;
+    }
+    &[type="submit"]
+    {
+        width: 160px;
+        text-align: center;
+        font-size: 14px;
+        text-transform: uppercase;
+        color: white;            
+        box-shadow: 0 0 20px #eee;
+        border-radius: 2px;
+        box-shadow: 0 0 20px #eee;
+        background-size: 200% auto;
+        border: none;
+        outline: none;
+        display: block;
+        cursor: pointer;
+        transition: 0.5s;
+        font-weight: bold;
+        margin: 8px 5px;
+    }
+}
+.action-btn
+{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+}
+&.signin-f
+{
+    z-index: 2;
+    form
+    {
+        input 
+          {
+              &[type="submit"]
+              {
+                  background-image: linear-gradient(to right, #283048 0%, #859398  51%, #283048  100%);
+              &:hover
+
+              {
+                          background-position: right center; /* change the direction of the change here */
+                          color: #fff;
+                          text-decoration: none;
+                          color: $maincolor;
+              }
+              }
+              
+          }
+    }
+}
+
+
+
+// Start Sign Up Style
+
+&.signup-f
+{
+    .option-radio
+    {
+        display: flex;
+        input 
+        {
+            &[type="radio"]
+            {
+                outline: none;
+                border: none;
+            }
+        }
+    }
+    z-index: 1;
+    form 
+    {
+        
+        input 
+        {
+            background: #8f949e2d;
+            &:focus
+            {
+    outline: 1px solid #8f949e;
+    background: #fff;
+            }
+            &[type="submit"]
+            {
+                background-image: linear-gradient(to right, #8f949e 0%, #D7DDE8  51%, #8f949e  100%);
+                color: gray;
+            &:hover
+            {
+                background-position: right center; /* change the direction of the change here */
+                color: #fff;
+                text-decoration: none;
+            }
+            }
+}          
+
+.link 
+{
+    margin-top: 20px;
+    color: #555;
+    a
+    {
+        text-decoration: none;
+        color:#8f949e;
+        font-weight: bold;
+    }
+}
+
+        }
+    }
+    div 
+    {
+        position: relative;
+.fas
+{
+position: absolute;
+top: 15px;
+left: 3%;
+font-size: 21px;
+color: $maincolor;
+}
+    }
+
+}
+}
+}
+
+// Active Class
+
+.signfield.signin-f.active
+{
+    top: 100%;
+    transition: 0.5s;
+}
+.signup-f.active .signup-action  input[type="submit"]
+{
+    background: #8f949e;
+}
+.signup-f.active  .link span  a
+{
+    color: $maincolor;
+}
+

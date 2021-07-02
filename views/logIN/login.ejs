@@ -37,11 +37,11 @@
                                 <header>Sign in</header>
                                 <div class="user-field">
                                     <i class="fas fa-user"></i>
-                                    <input type="text" name="user_in" placeholder="Username" alt="">
+                                    <input type="text" name="username" placeholder="Username" autofocus alt="">
                                 </div>
                                 <div class="password-field">
                                     <i class="fas fa-lock"></i>
-                                    <input type="password" name="pass_in" placeholder="Password" alt="">
+                                    <input type="password" name="password" placeholder="Password" alt="">
                                 </div>
                                 <div class="action-btn">
                                     <div class="signIn-action">
@@ -57,23 +57,18 @@
                         </div>
                         <!-- Sign Up fields -->
                         <div class="signfield signup-f">
-                            <form action="/sginUp" method="POST">
+                            <form action="/AdminSginUp" method="POST">
                                 <header>Sign up</header>
                                 <div class="stu-field">
-                                    <input type="text" name="stuName" placeholder="Enter Stu Name" alt="">
-                                </div>
-                                <div class="stu-field">
-                                    <input type="text" name="stuID" placeholder="Enter Stu ID" alt="">
+                                    <input type="text" name="username" placeholder="Enter Stu Name" alt="">
                                 </div>
                                 <div class="password-field">
                                     <input type="password" name="password" placeholder="Enter Password" alt="">
                                 </div>
                                 <div class="uni-acc">
-                                    <input type="email" name="Ua" placeholder="Enter Univercity Code">
+                                    <input type="email" name="Ua" placeholder="Enter your email">
                                 </div>
-                                <div class="admincode">
-                                    <input type="password" name="adminCode" placeholder="Enter Admin Code" alt="">
-                                </div>
+                                
                                 <div class="signup-action">
                                     <input type="submit" name="signup-log" value="Sign up">
                                 </div>
