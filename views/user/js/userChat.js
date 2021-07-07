@@ -4,9 +4,7 @@ const roomName = document.getElementById('room-name');
 const userList = document.getElementById('users');
 const username = document.getElementById("dataUsername").dataset.test
 const room = document.getElementById("roomid").dataset.test
-console.log(username)
 // Get username and room from URL
-
 const socket = io();
 
 // Join chatroom
@@ -16,6 +14,7 @@ socket.emit('joinRoom', { username, room });
 // Get room and users
 socket.on('roomUsers', ({ room, users }) => {
   outputRoomName(room);
+  console.log("users")
   outputUsers(users);
 });
 
@@ -56,7 +55,7 @@ function outputMessage(message) {
   const p = document.createElement('p');
   p.classList.add('meta');
   p.innerText = message.username;
-  p.innerHTML += `<span>${message.time}</span>`;
+  p.innerHTML += `<span> ${message.time} </span>`;
   div.appendChild(p);
   const para = document.createElement('p');
   para.classList.add('text');
@@ -78,6 +77,9 @@ function outputUsers(users) {
     li.innerText = user.username;
     userList.appendChild(li);
   });
+  console.log(users)
+
+
 }
 const users = [];
 
@@ -86,7 +88,7 @@ function userJoin(id, username, room) {
   const user = { id, username, room };
 
   users.push(user);
-
+console.log(users)
   return user;
 }
 
@@ -108,4 +110,5 @@ function userLeave(id) {
 function getRoomUsers(room) {
   return users.filter(user => user.room === room);
 }
+
 

@@ -27,7 +27,9 @@ socket.on('message', (message) => {
   // Scroll down
   chatMessages.scrollTop = chatMessages.scrollHeight;
 });
+socket.on('disconnect',()=>{
 
+})
 // Message submit
 chatForm.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -78,7 +80,15 @@ function outputUsers(users) {
     li.innerText = user.username;
     userList.appendChild(li);
   });
+  console.log(users)
+ 
 }
 
 //Prompt the user before leave chat room
-
+const chatHead = document.querySelector('.chat-header');
+let  chatBott = document.querySelector('.chat-area');
+      chatHead.addEventListener('click', function()
+      {
+          // const leaveRoom = confirm('Are you sure you want to leave the chatroom?');
+            chatBott.classList.toggle('bottom')
+      })

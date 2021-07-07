@@ -12,7 +12,7 @@
     <div class="badge-wrap">
         <div class="sidebar-left">
             <div class="logo">
-                <a href="user.html">
+                <a href="/user/">
                     <span class="icon">E</span>
                     <span class="title">E-Learning</span>
                 </a>
@@ -22,38 +22,41 @@
                   <img src="icon.png">
               </div>
               <div class="name-prof">
-                  <span id="...">User</span>   <!--Change Name of admin with contact name user-->
+                  <span id="..."><%=username%></span>   <!--Change Name of admin with contact name user-->
               </div>
             </div>
-  
             <div class="sidebar-link">
                 <ul>
                     <li>
-                        <a href="mangstd.html">
+                        <a href="/user/mangeCourse">
                            <span class="icon"><i class="fas fa-school"></i></span> 
                             <span class="title">Manage Courses</span>
                         </a>
                     </li>
+                    
+                    <% if(classList.length !== 0){ %> 
                   <li>
-                    <a href="livestreamuser.html">
+                    <a href="/user/live-class">
                         <span class="icon"><i class="fas fa-desktop"></i></span> 
                         <span class="title">LiveStream</span>
                     </a>
                 </li>
+                <% } %> 
                 <li>
-                    <a href="userprof.html">
+                    <a href="/user/profile">
                         <span class="icon"><i class="fas fa-user"></i></span> 
                         <span class="title">Profile</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/logOut" >
                         <span class="icon"><i class="fas fa-sign-out-alt"></i></span> 
                         <span class="title">Log out</span>
                     </a>
                 </li>
                 </ul>
             </div>
+    
         </div>
         <!-- START CENTER -->
         <div class="main">

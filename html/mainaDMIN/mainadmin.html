@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="css/fontawesom.min.css">
+    <link rel="stylesheet" href="css/stylemainadmin.css">
+</head>
+<body>
+    <div class="badge-wrap">
+        <div class="sidebar-left">
+            <div class="logo">
+                <a href="#">
+                    <span class="icon">E</span>
+                    <span class="title">E-Learning</span>
+                </a>
+            </div>
+            <div class="info-prof">
+              
+              <div class="name-prof">
+                  <span id="...">Admin</span>   <!--Change Name of admin with contact name user-->
+              </div>
+            </div>
+  
+            <div class="sidebar-link">
+                <ul>
+                    <li>
+                        <a href="mainadmin.html">
+                           <span class="icon"><i class="fas fa-chalkboard-teacher"></i></span> 
+                            <span class="title">Setting Instractor</span>
+                        </a>
+                    </li>
+                  <li>
+                    <a href="studentset.html">
+                        <span class="icon"><i class="fas fa-users-cog"></i></span> 
+                        <span class="title">Setting Users</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-sign-out-alt"></i></span> 
+                        <span class="title">Log out</span>
+                    </a>
+                </li>
+                </ul>
+            </div>
+        </div>
+        <!-- START CENTER -->
+        <div class="main">
+            <div class="navigation">
+                <div class="toggle" id="toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+            <div class="main-content">
+               <div class="main-table-inst">
+                <header><h2>Instractor</h2></header>
+                <div class="instractor-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Name Instractor</td>
+                                <td>Phone Number</td>
+                                <td>Email Address</td>
+                                <td>Action</td>
+                            </tr>
+                        </thead>
+                        <tbody>   <!--Here  link database from manage class-->
+                            <tr>
+                                <td>ahmed</td>
+                                <td>01xxxxxxxxx</td>  
+                                <td>ahmed@gmail.com</td> 
+                                <td>
+                                    <button class="accept-inst" value="accept">accept</button>
+                                    <button class="rej-inst" value="reject">reject</button>
+                                </td> 
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+               </div>
+             </div>
+
+            </div>
+        </div>
+    </div>
+
+      <script>
+          
+const togglesid = document.getElementById('toggle');
+      togglesid.addEventListener('click', function(){
+          let sideLeft = document.querySelector('.sidebar-left');
+              sideLeft.classList.toggle('active');
+          let main = document.querySelector('.main');
+            main.classList.toggle('active');
+          let logo = document.querySelector('.logo .title');
+              logo.classList.toggle('active');
+              let logoicon = document.querySelector('.logo .icon');
+              logoicon.classList.toggle('active'); 
+      })
+
+
+
+      </script>
+</body>
+</html>

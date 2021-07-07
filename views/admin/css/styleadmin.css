@@ -307,6 +307,10 @@ li
     display: none; }
   .logo span:last-child.active {
     display: block; } }
+    .area-cours{
+      
+    margin: 4px 4px;
+    }
 .manage-courses .action-cours,
 .manage-courses .action-student,
 .manage-stdent .action-cours,
@@ -318,8 +322,12 @@ li
   .manage-stdent .action-cours form,
   .manage-stdent .action-student form {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap; }
+    justify-content: space-between;
+    margin: 0 1rem;
+    margin-bottom: 1.25rem;
+    align-items: center; 
+  
+    flex-wrap: wrap;}
     .manage-courses .action-cours form div,
     .manage-courses .action-student form div,
     .manage-stdent .action-cours form div,
@@ -328,17 +336,18 @@ li
       .manage-courses .action-cours form div input,
       .manage-courses .action-student form div input,
       .manage-stdent .action-cours form div input,
-      .manage-stdent .action-student form div input {
+      .manage-stdent .action-student form div input, select {
         width: 100%;
-        padding: 12px 14px 12px 35px;
-        margin: 10px;
+        padding: 8px 16px;
+        /* margin: 10px; */
         border: none;
         outline: none;
         box-shadow: none;
         color: #333;
         background: #3865a11c;
         font-size: 16px;
-        transition: 0.5s; }
+        transition: 0.5s;
+      }
     .manage-courses .action-cours form .add,
     .manage-courses .action-student form .add,
     .manage-stdent .action-cours form .add,
@@ -349,9 +358,9 @@ li
       .manage-stdent .action-cours form .add i,
       .manage-stdent .action-student form .add i {
         position: absolute;
-        top: 20px;
-        left: 34%;
-        font-size: 21px;
+        top: 8px;
+        left: 9px;
+        font-size: 17px;
         color: #fff;
         user-select: none;
         cursor: pointer; }
@@ -361,7 +370,9 @@ li
       .manage-stdent .action-student form .add input {
         background: #42b72a;
         color: #fff;
-        cursor: pointer; }
+        cursor: pointer; 
+      
+    padding-left: 32px;}
         .manage-courses .action-cours form .add input:hover,
         .manage-courses .action-student form .add input:hover,
         .manage-stdent .action-cours form .add input:hover,
@@ -455,7 +466,7 @@ li
               width: 95%;
               min-height: 500px;
                margin: 10px auto;
-               background:royalblue;
+               background:#ddd;
             }
             .livestream-container button
             {
@@ -518,12 +529,15 @@ li
               left: 0;
               width: 100%;
               height: 50px;
-              background: #233648;
+              background: #334f6a
+              ;
               display: flex;
               flex-direction: row;
               justify-content: space-between;
               padding: 10px 8px;
               cursor: pointer;
+              border-radius: 10px 10px 0 0;
+
             }
 
             .chat-container .chat-header h1 
@@ -543,6 +557,11 @@ li
               border-radius: 4px;
               cursor: pointer;
               transition: 0.6s;
+              z-index: 666;
+            }
+            .chat-container .chat-header button:hover
+            {
+              background: #a50202;
             }
             .chat-container .chat-main
             {
@@ -558,54 +577,91 @@ li
             .chat-container .chat-main .chat-sidebar
             {
               position:absolute;
-              width: 130px;
+              width: 132px;
               height: 79%;
               top: 0;
               left: 0;
-              overflow: hidden;
-              background: #627486;
-              box-shadow: 0 0 8px #e6e6e6;
+              overflow-y: scroll;
+              overflow-x: auto;
+              scroll-behavior: smooth;
+              background: #334f6a
+;
               transition: 0.6s;
-              overflow-y: auto;
+              
+              border-top: 1px solid rgba(0, 0, 0, 0.25);
             }
             .chat-container .chat-main .chat-sidebar .room-chat
             {
-              font-weight: bold;
+              font-weight: 600;
               font-size: 16px;
+              box-shadow:   0 1px 3px -1px rgb(0 0 0 / 75%);
+              width: 100%;
             }
-
+            .chat-container .chat-main .chat-sidebar .room-chat .room-title,
+            .chat-container .chat-main .chat-sidebar .users-chat .users-title
+            {
+              display: grid;
+              color: #14202b;
+              font-weight: bold;
+            }
+            .chat-container .chat-main .chat-sidebar .room-chat #room-name,
+            .chat-container .chat-main .chat-sidebar .users-chat ul li
+            {
+                color:#9db5cc;
+            }
+        
             .chat-container .chat-main .chat-sidebar .users-chat
             {
               display: flex;
               flex-direction: column;
-              overflow-y: auto;
+              
+              overflow: hidden;
             }
             .chat-container .chat-main .chat-sidebar .users-chat ul
             {
               padding-top: 10px;
               display: flex;
               flex-direction: column;
-      
+              word-wrap: break-word;
             }
             .chat-container .chat-main .chat-sidebar .users-chat ul li 
             {
               font-size: 16px;
-              padding: 0 5px;
-              color: #fff;
+              padding: 7px 5px;
+              border-top: 1px solid rgba(0, 0, 0, 0.75);
+              font-weight: 600;
             }
             .chat-container .chat-main .chat-messages
             {
-              position: absolute;
-              width: calc(100% - 130px);
-              height: 79%;
-              padding: 10px 8px;
-              left: 130px;
+                  position: absolute;
+                  width: calc(100% - 132px);
+                  height: 79%;
+                  padding: 10px 8px;
+                  left: 132px;
                   display: flex;
                   flex-direction: column;
                   background: #e4e6eb;
                   color: #050505;
-                 overflow-x: auto;
-                 overflow-y: auto ;
+                  overflow: hidden;
+                  overflow-y: scroll ;
+                 
+            }
+            .chat-container .chat-main .chat-messages .message
+            {
+               background:#507ca5;
+               padding: 10px;
+               margin-top: 10px;
+               border-radius: 5px;
+            }
+            .chat-container .chat-main .chat-messages .meta 
+            {
+              font-size: 18px;
+              font-weight: bold;
+            }
+            .chat-container .chat-main .chat-messages .text
+            {
+              color: #050505;
+              letter-spacing: 0.5px;
             }
          .chat-form-container
          {

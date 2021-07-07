@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELC</title>
+    <link rel="stylesheet" href="css/fontawesom.min.css">
+    <link rel="stylesheet" href="css/stylesign.css">
+</head>
+<body>
+    <div class="log-container">
+        <div class="log-forms">
+
+            <!-- Sign In -->
+            <div class="signfield signinfield">
+
+                <form id="signin">
+                    <header><h2>Sign In</h2></header>
+                    <div class="user-in">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Username">
+                    </div>
+                    <!-- Password -->
+                    <div class="pass-in">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password">
+                    </div>
+                    <!-- Choose Admin or user -->
+                    <div class="radio-actions-Login">
+                        <div class="radiouser-in">
+                            <label for="user-login">User</label>
+                            <input type="radio" name="loginch" id="user-login" value="User" style="outline: none;">
+                        </div>
+                        <div class="radioinstrac-in">
+                            <label for="instrac-login">Instractor</label>
+                            <input type="radio" name="loginch" id="instrac-login" value="Instractor" style="outline: none;">
+                        </div>
+                    </div>
+
+                    <div class="signin-logbtn">
+                        <input type="submit" value="Login">
+                    </div>
+
+                    <div class="link">
+                        <span>Don't have an account?<a href="#" onclick="mode();">Sign up</a></span>
+                    </div>
+                </form>
+            </div>
+            <!-- Sign Up -->
+            <div class="signfield signupfield">
+
+                <form id="signup">
+                    <header><h2>Sign Up</h2></header>
+                    <div class="user-up">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-times-circle"></i>
+                        <input type="text" id="usernameup" placeholder="Enter username" onkeyup="validationuser()" required>
+                        <span id="validuser"></span>
+                    </div>
+                    <!-- Password -->
+                    <div class="pass-up">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-times-circle"></i>
+                        <input type="password" id="passup" placeholder="Enter Password" onkeyup="validationPassword();"  minlength="6" maxlength="18" required>
+                        <span id="validpass"></span>
+                    </div>
+                    <!-- confirm Password -->
+                    <div class="confpass-up">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-times-circle"></i>
+                        <input type="password" id="confpassup" placeholder="Confirm Password"  onkeyup="validationconfPassword()" minlength="6" maxlength="18" required>
+                        <span id="validconfpass"></span>
+                    </div>
+                        <!-- Email Address -->
+                    <div class="emailadress">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-times-circle"></i>
+                        <input type="email" id="email" placeholder="Enter Email Address" pattern="^[^ ]+@[^ ]+\.[a-z]{2,3}$" onkeyup="validationEmail();"  minlength="6" maxlength="40" required>
+                        <span id="valideemail"></span>
+                    </div>
+                    <!-- Phone Number -->
+                    <div class="phoneup">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-times-circle"></i>
+                        <input type="tel" id="phone-num" minlength="6" maxlength="11" onkeyup="validationPhonenum()" placeholder="Enter PhoneNumber"  pattern="^01[0-2]\d{1,8}$" required>
+                        <span id="validphone"></span>
+                    </div>
+                    <!-- Choose Admin or user -->
+                    <div class="radio-actions-Login">
+                        <div class="radiouser-in">
+                            <label for="user-login">User</label>
+                            <input type="radio" name="loginch" id="user-login" value="User" style="outline: none;">
+                        </div>
+                        <div class="radioinstrac-in">
+                            <label for="instrac-login">Instractor</label>
+                            <input type="radio" name="loginch" id="instrac-login" value="Instractor" style="outline: none;">
+                        </div>
+                    </div>
+
+                    <div class="signin-logbtn">
+                        <input type="submit" value="Sign Up">
+                    </div>
+                    <div class="link">
+                        <span>Do you have an account?<a href="#" onclick="mode();">Sign in</a></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="java.js"></script>
+</body>
+</html>

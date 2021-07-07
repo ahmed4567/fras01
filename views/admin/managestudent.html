@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Student</title>
+    <link rel="stylesheet" href="css/fontawesom.min.css">
+    <link rel="stylesheet" href="css/styleadmin.css">
+</head>
+<body>
+    <div class="badge-wrap">
+        <div class="sidebar-left">
+            <div class="logo">
+                <a href="/admin/">
+                    <span class="icon">E</span>
+                    <span class="title">E-Learning</span>
+                </a>
+            </div>
+            <div class="info-prof">
+              <div class="img-prof">
+                  <img src="icon.png">
+              </div>
+              <div class="name-prof">
+                  <span id="..."></span>   <!--Change Name of admin with contact name user-->
+              </div>
+            </div>
+  
+            <div class="sidebar-link">
+                <ul>
+                    <li>
+                        <a href="/admin/mange-courses">
+                           <span class="icon"><i class="fas fa-school"></i></span> 
+                            <span class="title">Manage Course</span>
+                        </a>
+                    </li>
+                    <li>
+                      <a href="/admin/manage-student">
+                          <span class="icon"><i class="fas fa-user-cog"></i></span> 
+                          <span class="title">Manage Student</span>
+                      </a>
+                  </li>
+                  <li>
+                    <a href="/admin/live-class">
+                        <span class="icon"><i class="fas fa-desktop"></i></span> 
+                        <span class="title">Manage LiveStream</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/profile">
+                        <span class="icon"><i class="fas fa-user"></i></span> 
+                        <span class="title">Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-sign-out-alt"></i></span> 
+                        <span class="title">Log out</span>
+                    </a>
+                </li>
+                </ul>
+            </div>
+        </div>
+        <!-- START CENTER -->
+        <div class="main">
+            <div class="navigation">
+                <div class="toggle" id="toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="notfication">
+                  <span class="icon" id="notfication"><i class="fas fa-bell"></i></span>
+                   <div class="notfication-container">
+                       <div class="req">
+                           <!-- Link for Student Join to class-->
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+                          <span>3 Student request Ai course</span>
+  
+                       </div>
+                   </div>
+              </div>
+            </div>
+            <div class="main-content">
+                <!-- Start Manage Cours -->
+                <div class="manage-stdent">
+                    <div class="action-student">
+                        <form action="/addStu" method="POST">
+                            <div class="area-student">
+                                <input type="text" name="stuId" id="cval" placeholder="Enter User Code">
+                            </div>
+
+                            <div >
+                                
+                                <select  name="className" id="class">
+                                            
+                                    <% for (var i = 0; i < classDb.length; i++) {%>
+                                        <% if (classDb[i] === null){%>
+                                            <% console.log(classDb[i]); %> 
+                                        <% }else{  %> 
+                                        <option value="<%=classDb[i].className%>"><%=classDb[i].className%></option>
+                                        <% }} %> 
+                                  </select>
+                            </div>
+                            <div class="add">
+                                <i class="fas fa-plus"></i>
+                                <input type="submit" value="Add">
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Start Table -->
+                    <div class="courses-table-manage">
+                        <table>
+                            <thead>
+                               
+                                <tr>
+                                    <td>Student name</td>
+                                    <td>Code Student</td>
+                                    <td>Course Name</td>
+                                    <td>kick</td>
+                                </tr>
+                            </thead>
+                            <tbody>   <!--Here  link database from manage class-->
+                                <% if (stuList.length === 0){ %> 
+                                     <tr>
+                                         <td>
+                                             you have no student wate for a join request or add a student from here <span>arow up</span>
+                                         </td>
+                                     </tr> 
+                                     <% }else{ %> 
+                                        <% for (var i = 0; i < stuList.length; i++) {%>
+                                            <% if (stuList[i] === null){%>
+                                                <% console.log(classDb[i]); %> 
+                                            <% }else{  %> 
+                                                <tr>
+                                                    <td><%= stuList[i].stuName %> </td>
+                                                    <td><%= stuList[i].stuId %>   </td>
+                                                    <td><%= stuList[i].className %> </td>
+                                                    <% const v = stuList[i].stuId%>
+                                                    <td ><button id="kike" name="<%=stuList[i].className %>" value="<%= v %>" onclick="remove(this) ;send(this)">Kick</button></td>  <!--link database from manage class-->
+                                                  
+                                                    </form>
+                                                </tr> 
+                                            <% }}} %>  
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <h1 style="text-align: center;" >Join requsts</h1>
+                    <div class="courses-table-manage">
+                        <table>
+                            <thead>
+                               
+                                <tr>
+                                    <td>Student name</td>
+                                    <td>Code Student</td>
+                                    <td>Course Name</td>
+                                    <td>kick</td>
+                                </tr>
+                            </thead>
+                            <tbody>  
+                                 <!--Here  link database from manage class-->
+                                <% if (watinList.length === 0){ %> 
+                                     <tr>
+                                         <td>
+                                             you have no student wate for a join request <span>arow up</span>
+                                         </td>
+                                     </tr> 
+                                     <% }else{ %> 
+                                        <% for (var i = 0; i < watinList.length; i++) {%>
+                                            <% if (watinList[i] === null){%>
+                                                <% console.log(classDb[i]); %> 
+                                            <% }else{  %> 
+                                                <tr>
+                                                    <% console.log(watinList[i]) %> 
+                                                    <td><%= watinList[i].stuname %> </td>
+                                                    <% console.log(watinList[i].stuname) %> 
+                                                    <td><%= watinList[i].stuId %>   </td>
+                                                    <% console.log(watinList[i].stuId) %> 
+                                                    <td><%= watinList[i].className %> </td>
+                                                    <% console.log(watinList[i].className) %> 
+                                                    <td ><button id="kike" name="<%=watinList[i].stuId %>"value="<%= watinList[i].className %>" onclick="remove(this) ;send(this)" style="background-color: blue;">Accepte</button></td>  <!--link database from manage class-->
+                                                    
+                                                    <td ><button id="kike" name="<%=watinList[i].stuId %>" value="<%= watinList[i].className %>" onclick="remove(this) ;sendReject(this)">Rejecte</button></td>  <!--link database from manage class-->
+                                                  
+                                                    </form>
+                                                </tr> 
+                                            <% }}} %>  
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <script src="js/javaadmin.js"></script>
+      <script>
+      function remove(elem){
+        elem.parentNode.parentNode.remove(elem);
+        }
+        function send(ele){
+            var stuId = ele.name
+            var className = ele.value
+            console.log(className)
+            var data = {
+                "className":`${className}`,
+                "stuId":`${stuId}`
+            }
+            console.log(data)
+            var form = new FormData()
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/Accepte', true);
+            xhr.setRequestHeader('Content-type', 'application/json');
+
+                xhr.send(JSON.stringify(data));
+        }
+        function sendReject(ele){
+            var stuId = ele.name
+            var className = ele.value
+            console.log(className)
+            var data = {
+                "className":`${className}`,
+                "stuId":`${stuId}`
+            }
+            console.log(data)
+            var form = new FormData()
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/reject', true);
+            xhr.setRequestHeader('Content-type', 'application/json');
+
+                xhr.send(JSON.stringify(data));
+        }
+     
+      </script>
+</body>
+</html>

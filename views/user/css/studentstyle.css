@@ -209,7 +209,7 @@
               color: #233648; }
             .main .main-content .main-table .courses-table {
               display: grid;
-              height: 401px; }
+               }
               .main .main-content .main-table .courses-table table {
                 margin: 0 10px;
                 border-collapse: collapse;

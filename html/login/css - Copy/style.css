@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+a {
+  text-decoration: none; }
+
+body {
+  background-image: url(../img/background.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
+
+.container-form {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .container-form .log-forms {
+    position: relative;
+    background: #fff;
+    width: 400px;
+    height: 460px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: 0.5s; }
+    .container-form .log-forms .signfield {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      transition: 0.5s; }
+      .container-form .log-forms .signfield form {
+        width: 100%;
+        height: 100%;
+        padding: 30px;
+        background: #fff;
+        transition: 0.5s; }
+        .container-form .log-forms .signfield form header {
+          color: #555;
+          font-size: 18px;
+          letter-spacing: 2px;
+          font-weight: bold;
+          padding: 8px 0;
+          text-align: center;
+          text-transform: uppercase;
+          user-select: none; }
+        .container-form .log-forms .signfield form input {
+          width: 100%;
+          padding: 12px 14px 12px 35px;
+          margin: 9px 0;
+          border: none;
+          outline: none;
+          box-shadow: none;
+          color: #333;
+          background: #3865a11c;
+          font-size: 16px;
+          transition: 0.5s; }
+          .container-form .log-forms .signfield form input:focus {
+            outline: 1px solid #233648;
+            background: #fff; }
+          .container-form .log-forms .signfield form input[type="submit"] {
+            width: 160px;
+            text-align: center;
+            font-size: 14px;
+            text-transform: uppercase;
+            color: white;
+            box-shadow: 0 0 20px #eee;
+            border-radius: 2px;
+            box-shadow: 0 0 20px #eee;
+            background-size: 200% auto;
+            border: none;
+            outline: none;
+            display: block;
+            cursor: pointer;
+            transition: 0.5s;
+            font-weight: bold;
+            margin: 8px 5px; }
+        .container-form .log-forms .signfield form .action-btn {
+          width: 100%;
+          display: flex;
+          flex-direction: row; }
+      .container-form .log-forms .signfield.signin-f {
+        z-index: 2; }
+        .container-form .log-forms .signfield.signin-f form input[type="submit"] {
+          background-image: linear-gradient(to right, #283048 0%, #859398 51%, #283048 100%); }
+          .container-form .log-forms .signfield.signin-f form input[type="submit"]:hover {
+            background-position: right center;
+            /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+            color: #233648; }
+      .container-form .log-forms .signfield.signup-f {
+        z-index: 1; }
+        .container-form .log-forms .signfield.signup-f .option-radio {
+          display: flex; }
+          .container-form .log-forms .signfield.signup-f .option-radio input[type="radio"] {
+            outline: none;
+            border: none; }
+        .container-form .log-forms .signfield.signup-f form input {
+          background: #8f949e2d; }
+          .container-form .log-forms .signfield.signup-f form input:focus {
+            outline: 1px solid #8f949e;
+            background: #fff; }
+          .container-form .log-forms .signfield.signup-f form input[type="submit"] {
+            background-image: linear-gradient(to right, #8f949e 0%, #D7DDE8 51%, #8f949e 100%);
+            color: gray; }
+            .container-form .log-forms .signfield.signup-f form input[type="submit"]:hover {
+              background-position: right center;
+              /* change the direction of the change here */
+              color: #fff;
+              text-decoration: none; }
+        .container-form .log-forms .signfield.signup-f form .link {
+          margin-top: 20px;
+          color: #555; }
+          .container-form .log-forms .signfield.signup-f form .link a {
+            text-decoration: none;
+            color: #8f949e;
+            font-weight: bold; }
+      .container-form .log-forms .signfield div {
+        position: relative; }
+        .container-form .log-forms .signfield div .fas {
+          position: absolute;
+          top: 15px;
+          left: 3%;
+          font-size: 21px;
+          color: #233648; }
+
+.signfield.signin-f.active {
+  top: 100%;
+  transition: 0.5s; }
+
+.signup-f.active .signup-action input[type="submit"] {
+  background: #8f949e; }
+
+.signup-f.active .link span a {
+  color: #233648; }
+
+/*# sourceMappingURL=style.css.map */
