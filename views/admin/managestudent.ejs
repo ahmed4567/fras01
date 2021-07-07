@@ -93,58 +93,110 @@
                 <!-- Start Manage Cours -->
                 <div class="manage-stdent">
                     <div class="action-student">
-                        <form action="#">
+                        <form action="/addStu" method="POST" style="text-align: center;">
                             <div class="area-student">
-                                <input type="text" id="cval" placeholder="Enter User Code">
+                                <input type="text" name="stuId" id="cval" placeholder="Enter User Code">
+                            </div>
+
+                            <div >
+                                <select  name="className" id="class" style="border: none;">
+                                            
+                                    <% for (var i = 0; i < classDb.length; i++) {%>
+                                        <% if (classDb[i] === null){%>
+                                            <% console.log(classDb[i]); %> 
+                                        <% }else{  %> 
+                                        <option value="<%=classDb[i].className%>"><%=classDb[i].className%></option>
+                                        <% }} %> 
+                                  </select>
                             </div>
                             <div class="add">
                                 <i class="fas fa-plus"></i>
                                 <input type="submit" value="Add">
                             </div>
-
                         </form>
                     </div>
                     <!-- Start Table -->
                     <div class="courses-table-manage">
                         <table>
                             <thead>
+                               
                                 <tr>
-                                    <td>className</td>
-                                </tr>
-                                <tr>
+                                    <td>Student name</td>
                                     <td>Code Student</td>
                                     <td>Course Name</td>
                                     <td>kick</td>
                                 </tr>
                             </thead>
                             <tbody>   <!--Here  link database from manage class-->
-                                <tr>
-                                    <td>stu78888   </td>
-                                    <td>Ai</td>
-                                    <td><button>Kick</button></td>  <!--link database from manage class-->
-                                </tr>
+                                <% if (stuList.length === 0){ %> 
+                                     <tr>
+                                         <td>
+                                             you have no student wate for a join request or add a student from here <span>arow up</span>
+                                         </td>
+                                     </tr> 
+                                     <% }else{ %> 
+                                        <% for (var i = 0; i < stuList.length; i++) {%>
+                                            <% if (stuList[i] === null){%>
+                                                <% console.log(classDb[i]); %> 
+                                            <% }else{  %> 
+                                                <tr>
+                                                    <td><%= stuList[i].stuName %> </td>
+                                                    <td><%= stuList[i].stuId %>   </td>
+                                                    <td><%= stuList[i].className %> </td>
+                                                    <% const v = stuList[i].stuId%>
+                                                    <td ><button id="kike" name="<%=stuList[i].className %>" value="<%= v %>" onclick="remove(this) ;send(this)">Kick</button></td>  <!--link database from manage class-->
+                                                  
+                                                    </form>
+                                                </tr> 
+                                            <% }}} %>  
+                                
                             </tbody>
                         </table>
                     </div>
+                    <br>
+                    <h1 style="text-align: center;" >Join requsts</h1>
                     <div class="courses-table-manage">
                         <table>
                             <thead>
+                               
                                 <tr>
-                                    <td>className</td>
-                                </tr>
-                                <tr>
+                                    <td>Student name</td>
                                     <td>Code Student</td>
                                     <td>Course Name</td>
                                     <td>kick</td>
                                 </tr>
                             </thead>
-                            <tbody>   <!--Here  link database from manage class-->
-                               
-                                <tr>
-                                    <td>stu78888  </td>
-                                    <td>Ai</td>
-                                    <td><button>Kick</button></td>  <!--link database from manage class-->
-                                </tr>
+                            <tbody>  
+                                 <!--Here  link database from manage class-->
+                                <% if (watinList.length === 0){ %> 
+                                     <tr>
+                                         <td>
+                                             you have no student wate for a join request <span>arow up</span>
+                                         </td>
+                                     </tr> 
+                                     <% }else{ %> 
+                                        <% for (var i = 0; i < watinList.length; i++) {%>
+                                            <% if (watinList[i] === null){%>
+                                                <% console.log(classDb[i]); %> 
+                                            <% }else{  %> 
+                                                <tr>
+                                                    <% console.log(watinList[i]) %> 
+                                                    <td><%= watinList[i].stuname %> </td>
+                                                    <% console.log(watinList[i].stuname) %> 
+                                                    <td><%= watinList[i].stuId %>   </td>
+                                                    <% console.log(watinList[i].stuId) %> 
+                                                    <td><%= watinList[i].className %> </td>
+                                                    <% console.log(watinList[i].className) %> 
+                                                    <td >
+                                                        <button id="kike" name="<%=watinList[i].stuId %>" value="<%= watinList[i].className %>" onclick="remove(this) ;sendReject(this)">Rejectse</button>
+                                                        <button id="kike" name="<%=watinList[i].stuId %>"value="<%= watinList[i].className %>" onclick="remove(this) ;send(this)" style="background-color: blue;">Accepte</button>
+                                                    </td>  <!--link database from manage class-->
+                                                    
+                                                    
+                                                    </form>
+                                                </tr> 
+                                            <% }}} %>  
+                                
                             </tbody>
                         </table>
                     </div>
@@ -154,5 +206,43 @@
     </div>
 
       <script src="js/javaadmin.js"></script>
+      <script>
+      function remove(elem){
+        elem.parentNode.parentNode.remove(elem);
+        }
+        function send(ele){
+            var stuId = ele.name
+            var className = ele.value
+            console.log(className)
+            var data = {
+                "className":`${className}`,
+                "stuId":`${stuId}`
+            }
+            console.log(data)
+            var form = new FormData()
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/Accepte', true);
+            xhr.setRequestHeader('Content-type', 'application/json');
+
+                xhr.send(JSON.stringify(data));
+        }
+        function sendReject(ele){
+            var stuId = ele.name
+            var className = ele.value
+            console.log(className)
+            var data = {
+                "className":`${className}`,
+                "stuId":`${stuId}`
+            }
+            console.log(data)
+            var form = new FormData()
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/reject', true);
+            xhr.setRequestHeader('Content-type', 'application/json');
+
+                xhr.send(JSON.stringify(data));
+        }
+     
+      </script>
 </body>
 </html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Admins</title>
+    <link rel="stylesheet" href="css/fontawesom.min.css">
+    <link rel="stylesheet" href="css/stylemainadmin.css">
+</head>
+<body>
+    <div class="badge-wrap">
+        <div class="sidebar-left">
+            <div class="logo">
+                <a href="#">
+                    <span class="icon">E</span>
+                    <span class="title">E-Learning</span>
+                </a>
+            </div>
+            <div class="info-prof">
+              
+              <div class="name-prof">
+                  <span id="...">Admin</span>   <!--Change Name of admin with contact name user-->
+              </div>
+            </div>
+  
+            <div class="sidebar-link">
+                <ul>
+                    <li>
+                        <a href="instractorad.html">
+                           <span class="icon"><i class="fas fa-chalkboard-teacher"></i></span> 
+                            <span class="title">Setting Instractor</span>
+                        </a>
+                    </li>
+                  <li>
+                    <a href="admins.html">
+                        <span class="icon"><i class="fas fa-users-cog"></i></span> 
+                        <span class="title">Manage Admin</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-sign-out-alt"></i></span> 
+                        <span class="title">Log out</span>
+                    </a>
+                </li>
+                </ul>
+            </div>
+        </div>
+        <!-- register -->
+<div class="wall-reg">
+        <div class="regadmin">
+            <div class="signfield">
+                <form id="signup-admin">
+                    <header><h2>SignUp Admin</h2></header>
+                    <div class="adminup-up">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-times-circle"></i>
+                        <input type="text" id="adminuserup" placeholder="Enter username" onkeyup="validationuser()" required>
+                        <span id="validuserad"></span>
+                    </div>
+                    <!-- Password -->
+                    <div class="passadmin-up">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-times-circle"></i>
+                        <input type="password" id="passupad" placeholder="Enter Password" onkeyup="validationPassword();"  minlength="6" maxlength="18" required>
+                        <span id="validpassad"></span>
+                    </div>
+                    <!-- confirm Password -->
+                    <div class="confpassadmin-up">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-times-circle"></i>
+                        <input type="password" id="confpassupad" placeholder="Confirm Password"  onkeyup="validationconfPassword()" minlength="6" maxlength="18" required>
+                        <span id="validconfpassad"></span>
+                    </div>
+                        <!-- Email Address -->
+                    <div class="emailadressAdmin">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-times-circle"></i>
+                        <input type="email" id="emailadm" placeholder="Enter Email Address" pattern="^[^ ]+@[^ ]+\.[a-z]{2,3}$" onkeyup="validationEmail();"  minlength="6" maxlength="40" required>
+                        <span id="valideemailad"></span>
+                    </div>
+                    <!-- Phone Number -->
+                    <div class="phoneupadmin">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-times-circle"></i>
+                        <input type="tel" id="phone-numad" minlength="6" maxlength="11" onkeyup="validationPhonenum()" placeholder="Enter PhoneNumber"  pattern="^01[0-2]\d{1,8}$" required>
+                        <span id="validphonead"></span>
+                    </div>    
+                <div class="signup-logbtn">
+                    <input type="submit" id="signup" value="Sign Up">
+                </div>
+                <div class="signup-logbtn">
+                    <input type="submit" id="close" value="Close" onclick="closereg(); " style="
+                            border: none;
+                            outline: none;
+                            box-shadow: none;
+                            border-radius: 7px;
+                            background: red;
+                            color: #fff;
+                            cursor: pointer;
+                            font-size: 16px;
+                            transition: 0.5s;
+                            text-align: center;
+                            padding: 20px 21px;
+                        ">
+                </div>
+            </div>
+        </form>
+        </div>
+</div>
+        <!-- START CENTER -->
+        <div class="main">
+            <div class="navigation">
+                <div class="toggle" id="toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+            <div class="main-admin">
+                <div class="Register">
+                    <button value="Register" onclick="openreg();">Register</button>
+                </div>
+                <div class="main-content">
+                    <div class="main-table-admin">
+                     <header><h2>Admins</h2></header>
+                     <div class="admins-table">
+                         <table>
+                             <thead>
+                                 <tr>
+                                     <td>Name Admin</td>
+                                     <td>Phone Number</td>
+                                     <td>Email Address</td>
+                                     <td>Action</td>
+                                 </tr>
+                             </thead>
+                             <tbody>   <!--Here  link database from manage class-->
+                                 <tr>
+                                     <td>ahmed</td>
+                                     <td>01xxxxxxxxx</td>  
+                                     <td>ahmed@gmail.com</td> 
+                                     <td>
+                                         <button class="accept-inst" value="accept">accept</button>
+                                         <button class="rej-inst" value="reject">reject</button>
+                                     </td> 
+                                 </tr>
+     
+                             </tbody>
+                         </table>
+                     </div>
+                    </div>
+                  </div>
+            </div>
+            </div>
+
+ 
+        </div>
+    </div>
+
+      <script src="js/javaadminr.js"></script>
+</body>
+</html>

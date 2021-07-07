@@ -4,29 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live E-learn System</title>
+    <title>ELC</title>
     <link rel="stylesheet" href="css/fontawesom.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/stylesign.css">
 </head>
 <body>
-    <div class="container-form">
+    <div class="log-container">
         <div class="log-forms">
-            <!-- Sign In fields -->
-            <div class="signfield signin-f">
-                <form action="/signIN" method="POST" >
-                    <header>Sign in</header>
-                    <div class="user-field">
+
+            <!-- Sign In -->
+            <div class="signfield signinfield">
+
+                <form id="signin" action="/signIN" method="POST">
+                    <header><h2>Sign In</h2></header>
+                    <div class="user-in">
                         <i class="fas fa-user"></i>
-                        <input type="text" name="username" placeholder="Username" alt=""required>
+                        <input type="text" name="username" placeholder="Username">
                     </div>
-                    <div class="password-field">
+                    <!-- Password -->
+                    <div class="pass-in">
                         <i class="fas fa-lock"></i>
-                        <input type="password" name="password" placeholder="Password" alt="" required>
+                        <input type="password" name="password" placeholder="Password">
                     </div>
-                    <div class="action-btn">
-                        <div class="signIn-action">
-                            <input type="submit" name="signin-log" value="Login">
-                        </div>
+           
+
+                    <div class="signin-logbtn">
+                        <input type="submit" value="Login">
                     </div>
 
                     <div class="link">
@@ -34,52 +37,85 @@
                     </div>
                 </form>
             </div>
-            <!-- Sign Up fields -->
-            <div class="signfield signup-f">
-                <form id="signUP" method="POST" >
-                    <header>Sign up</header>
-                    <div class="stu-field">
-                        <input type="text" name="username" placeholder="Enter Stu" alt="" required>
+            <!-- Sign Up -->
+            <div class="signfield signupfield">
+
+                <form id="signup" action="" method="POST">
+                    <header><h2>Sign Up</h2></header>
+                    <div class="user-up">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-times-circle"></i>
+                        <input type="text" name="username" id="usernameup" placeholder="Enter username" onkeyup="validationuser()" required>
+                        <span id="validuser"></span>
                     </div>
-                    <div class="password-field">
-                        <input type="password" name="password" placeholder="Enter Password" alt="" required>
+                    <!-- Password -->
+                    <div class="pass-up">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-times-circle"></i>
+                        <input type="password" name="password" id="passup" placeholder="Enter Password" onkeyup="validationPassword();"  minlength="6" maxlength="18" required>
+                        <span id="validpass"></span>
                     </div>
-                    <div class="uni-acc">
-                        <input type="email" name="Uc" placeholder="Enter Univercity Code" required>
+                    <!-- confirm Password -->
+                    <div class="confpass-up">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-times-circle"></i>
+                        <input type="password" id="confpassup" placeholder="Confirm Password"  onkeyup="validationconfPassword()" minlength="6" maxlength="18" required>
+                        <span id="validconfpass"></span>
                     </div>
-                    <div class="phone">
-                        <input type="number" name="phone" maxlength="11" placeholder="Enter Phone Number" alt="" required>
+                        <!-- Email Address -->
+                    <div class="emailadress">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-times-circle"></i>
+                        <input type="email" name="email" id="email" placeholder="Enter Email Address" pattern="^[^ ]+@[^ ]+\.[a-z]{2,3}$" onkeyup="validationEmail();"  minlength="6" maxlength="40" required>
+                        <span id="valideemail"></span>
                     </div>
-                    <div class="option-radio">
-                        <input type="radio" id="user" name="choose" value="user" onclick="changeSign()"required>
-                        <label for="user">User</label><br>
-                        <input type="radio" id="admin" name="choose" value="admin" onclick="changeSign()" >
-                        <label for="admin">Admin</label><br>
+                    <!-- Phone Number -->
+                    <div class="phoneup">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-times-circle"></i>
+                        <input type="tel" name="phone" id="phone-num" minlength="6" maxlength="11" onkeyup="validationPhonenum()" placeholder="Enter PhoneNumber"  pattern="^01[0-2]\d{1,8}$" required>
+                        <span id="validphone"></span>
                     </div>
-                    <div class="signup-action">
-                        <input type="submit" name="signup-log" value="Sign up">
+                    <!-- choose class fuc-->
+                    <div>
+                        <label for="faculty " style="display: block;">Choose a :faculty</label>
+
+                        <select name="fuc" id="fuc" style="display: block;width: 100%;">
+                            <option value="IT">IT</option>
+                            <option value="CS">CS</option>
+                          </select>
+                    </div>
+                    <!-- Choose Admin or user -->
+                    <div class="radio-actions-Login">
+                        <div class="radiouser-in">
+                            <label for="user-login">User</label>
+                            <input onclick="changeSign()" type="radio" name="loginch" id="user-login" value="User" style="outline: none;">
+                        </div>
+                        <div class="radioinstrac-in">
+                            <label for="instrac-login">Instractor</label>
+                            <input required onclick="changeSign()" type="radio" name="loginch" id="instrac-login" value="Instractor" style="outline: none;">
+                        </div>
+                    </div>
+
+                    <div class="signin-logbtn">
+                        <input type="submit" value="Sign Up">
                     </div>
                     <div class="link">
-                        <span>Already have an account? <a href="#"  onclick="mode();">Sign In</a></span>
+                        <span>Do you have an account?<a href="#" onclick="mode();">Sign in</a></span>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+    <script src="java.js"></script>
     <script>
-          function mode()
-          {
-            let sin = document.querySelector('.signin-f');
-                let up = document.querySelector('.signup-f');
-                sin.classList.toggle('active');
-                up.classList.toggle('active');
-          }
-        function changeSign(){
-        if(document.getElementById("user").checked){
-            document.getElementById("signUP").setAttribute("action","/SginUp")
-        }else{
-            document.getElementById("signUP").setAttribute("action","/AdminSginUp")
-        }  
+          function changeSign(){
+        if(document.getElementById("user-login").checked){
+            document.getElementById("signup").setAttribute("action","/SginUp")
+        }else if(document.getElementById("instrac-login").checked){
+            document.getElementById("signup").setAttribute("action","/instractorSginUp")
+            
+        }
     }
     </script>
 </body>

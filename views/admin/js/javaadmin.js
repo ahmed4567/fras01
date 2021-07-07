@@ -14,13 +14,9 @@ const togglesid = document.getElementById('toggle');
               let logoicon = document.querySelector('.logo .icon');
               logoicon.classList.toggle('active'); 
       })
-const chatHead = document.querySelector('.chat-header');
-      chatHead.addEventListener('click', function()
-      {
-        let  chatBott = document.querySelector('.chat-area');
-               chatBott.classList.toggle('bottom')
-      })
 
 
 
+
+       
     //  Test Manage Cours Add

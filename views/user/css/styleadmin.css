@@ -318,8 +318,11 @@ li
   .manage-stdent .action-cours form,
   .manage-stdent .action-student form {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap; }
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 1rem;
+    margin-bottom: 1.25rem;
+    align-items: center; }
     .manage-courses .action-cours form div,
     .manage-courses .action-student form div,
     .manage-stdent .action-cours form div,
@@ -635,6 +638,201 @@ li
           cursor: pointer;
           transition: 0.6s;
          }
+/*chat style */
+.chat-area
+{
+  position: fixed;
+  bottom: 0;
+  right: 20px;
+  width: 450px;
+  height: 500px;
+  border: none;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+  z-index: 777;
+  overflow: hidden;
+  transition: 0.5s;
+  
+}
+.chat-area.bottom
+{
+  bottom: -460px;
+  
+}
+.chat-container
+{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.chat-container .chat-header
+{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: #334f6a
+  ;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 8px;
+  cursor: pointer;
+  border-radius: 10px 10px 0 0;
+
+}
+
+.chat-container .chat-header h1 
+{
+  color: #fff;
+  font-size: 25px;
+  line-height: 30px;
+  user-select: none;
+}
+.chat-container .chat-header button
+{
+  padding: 8px 10px;
+  background: red;
+  color: #fff;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.6s;
+  z-index: 666;
+}
+.chat-container .chat-header button:hover
+{
+  background: #a50202;
+}
+.chat-container .chat-main
+{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.chat-container .chat-main div 
+{
+  padding: 10px 6px;
+  font-size: 18px;
+}
+.chat-container .chat-main .chat-sidebar
+{
+  position:absolute;
+  width: 132px;
+  height: 79%;
+  top: 0;
+  left: 0;
+  overflow-y: scroll;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  background: #334f6a
+;
+  transition: 0.6s;
+  
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+}
+.chat-container .chat-main .chat-sidebar .room-chat
+{
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow:   0 1px 3px -1px rgb(0 0 0 / 75%);
+  width: 100%;
+}
+.chat-container .chat-main .chat-sidebar .room-chat .room-title,
+.chat-container .chat-main .chat-sidebar .users-chat .users-title
+{
+  display: grid;
+  color: #14202b;
+  font-weight: bold;
+}
+.chat-container .chat-main .chat-sidebar .room-chat #room-name,
+.chat-container .chat-main .chat-sidebar .users-chat ul li
+{
+    color:#9db5cc;
+}
+
+.chat-container .chat-main .chat-sidebar .users-chat
+{
+  display: flex;
+  flex-direction: column;
+  
+  overflow: hidden;
+}
+.chat-container .chat-main .chat-sidebar .users-chat ul
+{
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+}
+.chat-container .chat-main .chat-sidebar .users-chat ul li 
+{
+  font-size: 16px;
+  padding: 7px 5px;
+  border-top: 1px solid rgba(0, 0, 0, 0.75);
+  font-weight: 600;
+}
+.chat-container .chat-main .chat-messages
+{
+      position: absolute;
+      width: calc(100% - 132px);
+      height: 79%;
+      padding: 10px 8px;
+      left: 132px;
+      display: flex;
+      flex-direction: column;
+      background: #e4e6eb;
+      color: #050505;
+      overflow: hidden;
+      overflow-y: scroll ;
+     
+}
+.chat-container .chat-main .chat-messages .message
+{
+   background:#507ca5;
+   padding: 10px;
+   margin-top: 10px;
+   border-radius: 5px;
+}
+.chat-container .chat-main .chat-messages .meta 
+{
+  font-size: 18px;
+  font-weight: bold;
+}
+.chat-container .chat-main .chat-messages .text
+{
+  color: #050505;
+  letter-spacing: 0.5px;
+}
+.chat-form-container
+{
+position: absolute;
+bottom: 0;
+right: 0;
+width: 100%;
+}
+.chat-form-container  form 
+{
+padding: 10px;
+}
+.chat-form-container  form  input[type="text"]
+{
+padding: 10px 12px;
+width: 80%;
+outline: none;
+}
+.chat-form-container  form  button
+{
+padding: 8px 10px;
+background: green;
+color: #fff;
+outline: none;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+transition: 0.6s;
+}
 /*# sourceMappingURL=styleadmin.css.map */
 @media screen and (max-width: 477px) {
   .chat-area

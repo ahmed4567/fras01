@@ -22,7 +22,7 @@
                   <img src="icon.png">
               </div>
               <div class="name-prof">
-                  <span id="...">User</span>   <!--Change Name of admin with contact name user-->
+                  <span id="..."><%=username%></span>   <!--Change Name of admin with contact name user-->
               </div>
             </div>
   
@@ -34,12 +34,15 @@
                             <span class="title">Manage Courses</span>
                         </a>
                     </li>
+                    
+                    <% if(classList.length !== 0){ %> 
                   <li>
                     <a href="/user/live-class">
                         <span class="icon"><i class="fas fa-desktop"></i></span> 
                         <span class="title">LiveStream</span>
                     </a>
                 </li>
+                <% } %> 
                 <li>
                     <a href="/user/profile">
                         <span class="icon"><i class="fas fa-user"></i></span> 
@@ -75,21 +78,30 @@
                                 </tr>
                             </thead>
                             <tbody>   <!--Here  link database from manage class-->
-                                <tr>
-                                    <td>Ai</td>
-                                    <td>Aug, 2021</td>  <!--link database from manage class-->
-                                    <td>Dec, 2021</td>  <!--link database from manage class-->
+                                   <% if (classList.length === 0){%>
+                                    <tr>
+                                        <td>
+                                            you have no class join class from here <span>arow up</span> 
+                                        </td>
+                                    </tr>
+                                   <%}else{ %> 
+                                   <% for(let i = 0 ; i<classList.length;i ++){%>
+                                    <% if(classList[i].classStats === `Witting` ){%>
+                                        <tr>
+                                            <td>
+                                                cheek mange-courses for your wating list  <a href="/user/mangeCourse">here</a>
+                                            </td>
+                                        </tr>
+                                        <%continue %> 
+                                       <% }else{ %> 
+                                    <tr>
+                                    <td><%= classList[i].className%></td>
+                                    <td><%= classList[i].startDate%></td>  <!--link database from manage class-->
+                                    <td><%= classList[i].endDate%></td>  <!--link database from manage class-->
                                 </tr>
-                                <tr>
-                                  <td>Ai</td>
-                                  <td>Sep, 2021</td>  <!--link database from manage class-->
-                                  <td>Dec, 2021</td>  <!--link database from manage class-->
-                              </tr>
-                              <tr>
-                                  <td>Ai</td>
-                                  <td>Jun, 2021</td>  <!--link database from manage class-->
-                                  <td>Aug, 2021</td>  <!--link database from manage class-->
-                              </tr>
+                                   <% }}} %> 
+                                
+                              
                             </tbody>
                         </table>
                     </div>

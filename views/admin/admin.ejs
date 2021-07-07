@@ -53,7 +53,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/logout">
                         <span class="icon"><i class="fas fa-sign-out-alt"></i></span> 
                         <span class="title">Log out</span>
                     </a>
@@ -93,7 +93,6 @@
                 <div class="main-table">
                     <header><h2>your courses</h2></header>
                     <div class="courses-table">
-                        <button type="submit" onclick=insertRow()></button>
                         <table id="class-table">
                             <thead>
                                 <tr>
@@ -104,24 +103,36 @@
                                 </tr>
                             </thead>
                             <tbody>   <!--Here  link database from manage class-->
-                                <tr>
-                                    <td>Ai</td>
-                                    <td>15</td> <!--Link database from student of class-->
-                                    <td>Aug, 2021</td>  <!--link database from manage class-->
-                                    <td>Dec, 2021</td>  <!--link database from manage class-->
-                                </tr>
-                                <tr>
-                                  <td>Ai</td>
-                                  <td>30</td> <!--Link database from student of class-->
-                                  <td>Sep, 2021</td>  <!--link database from manage class-->
-                                  <td>Dec, 2021</td>  <!--link database from manage class-->
-                              </tr>
-                              <tr>
-                                  <td>Ai</td>
-                                  <td>50</td> <!--Link database from student of class-->
-                                  <td>Jun, 2021</td>  <!--link database from manage class-->
-                                  <td>Aug, 2021</td>  <!--link database from manage class-->
-                              </tr>
+                                <% if(classDb.length===0){ %>
+                                    <tr id="noClassTemp">
+                                        <td>
+                                            <h2>You Have no Class Add Class And start lirning <a href="/admin/mange-courses">From here</a></h2>
+                                        </td>
+                                    </tr>
+                                    <%}else{  %>  
+                                <% for (var i = 0; i < classDb.length; i++) {%>
+                                    <% const date = new Date().toLocaleTimeString()%>
+                                   
+                                    <% if (classDb[i] === null ){%>
+                                        <%continue %>
+                    
+                                    <% }else{  %>  
+                            
+                                <tr>    
+                                    <td id="className"><%= classDb[i].className %> </td>
+                                    <td id="classStuN"> <%= classDb[i].numperOfStu %> </td>
+                                    <td id="classTime"> <%= classDb[i].classTime %> </td>
+
+                                    <td>  
+                                        <% if (classDb[i].time === date ){%>
+                                        <form class="add-class" action="/admin/live-class"><button id="delete-class" style="background-color: blueviolet;">Start Class</button></form>
+                                        <br>
+                                        
+                                         </tr>
+                    
+                                        <%}}}}%>
+                                
+                              
                             </tbody>
                         </table>
                     </div>
@@ -131,5 +142,8 @@
     </div>
 
       <script src="js/javaadmin.js"></script>
+      <script>
+          
+      </script>
 </body>
 </html>

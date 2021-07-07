@@ -34,6 +34,8 @@
                             <span class="title">Manage Course</span>
                         </a>
                     </li>
+                    <% if(classDb.length !== 0 ){ %> 
+
                     <li>
                       <a href="/admin/manage-student">
                           <span class="icon"><i class="fas fa-user-cog"></i></span> 
@@ -46,6 +48,7 @@
                         <span class="title">Manage LiveStream</span>
                     </a>
                 </li>
+                <% } %> 
                 <li>
                     <a href="/admin/profile">
                         <span class="icon"><i class="fas fa-user"></i></span> 
@@ -84,10 +87,25 @@
                     <div class="action-cours">
                         <form action="/addClass" method="POST">
                             <div class="area-cours">
+                             
+                          
                                 <input type="text" name="className" id="cval" placeholder="Enter Course Name" required>
                             </div>
-                            <div>
-                                <input type="time" name="time" id="" placeholder="Enter when the cours start">
+                            <div class="area-cours">
+                                <select name="classFuc" id="classFuc" style="height: inherit;">
+                                    <option value="IT">IT</option>
+                                    <option value="CS">CS</option>
+                            
+                                </select>
+                            </div>
+                            <div class="area-cours">
+                                <input type="time" name="time" id="" placeholder="Enter when the cours start" required>
+                            </div>
+                            <div class="area-cours">
+                                <input type="date" max="" name="dateStart" id="" placeholder="Enter when the cours start" required>
+                            </div>
+                            <div class="area-cours">
+                                <input type="date" name="dateEnd" id="" placeholder="Enter when the cours start" required>
                             </div>
                             <br>
                             <div class="add">
@@ -95,16 +113,7 @@
                                 <input type="submit" value="Add">
                             </div>
                         </form>
-                        <form action="/removeClass" method="POST">
-                            <div class="area-cours">
-                                <input type="text" name="className" id="cval" placeholder="Enter Course Name" required>
-                            </div>
-                            <div class="add">
-                                <i class="fas fa-minus"> </i>
-                                <input type="submit" value="Delete" style="background-color: red; ">
-                            </div>
-                        </form>
-                    </div>
+                        </div>
                     <!-- Start Table -->
                     <div class="courses-table-manage">
                         <table>
@@ -116,20 +125,40 @@
                                 </tr>
                             </thead>
                             <tbody>   <!--Here  link database from manage class-->
+                               
+                                <% if(classDb.length === 0  ){ %>
+                                    <tr id="noClassTemp">
+                                        <td>
+                                            <h2>you Have no Class Add Class From ther <span class="arowUp">arow up</span></h2>
+                                        </td>
+                                    </tr>
+                                    <% }else{ %> 
                                 <% for (var i = 0; i < classDb.length; i++) {%>
                                     <% if (classDb[i] === null){%>
-                                        <% console.log(classDb[i]); %>
+                                        <% continue %>
                                     <% }else{  %>  
-                                <tr>
-                                    <td id="className"><%= classDb[i].className %> </td>
-                                    <td id="classStuN"> <%= classDb[i].numperOfStu %> </td>
-
-                                    <td>
-                                        <form class="add-class" action="/admin/live-class"><button id="delete-class" style="background-color: blueviolet;">Start Class</button></form>
-                                        <br>
                                         
-                                         </tr>
-                                <%}}%>
+                                         
+                                         <tr>
+                                            <td id="className"><%= classDb[i].className %> </td>
+                                            <td id="classStuN"> <% for (let j =0;j<stuList.length;j++){%>
+                                                <%if(stuList[j].className === classDb[i].className){%>
+                                                    
+                                                    <%var numperOfStu = j%>
+                                                    <%= numperOfStu %> 
+                                             <%}%>
+                                             <%= numperOfStu %> 
+                                            <%}%>
+                                            <%= numperOfStu %> 
+                                        </td>
+        
+                                            <td>
+                                                <form class="add-class" action="/admin/live-class"><button id="delete-class" style="background-color: blueviolet;">Start Class</button></form>
+                                                <br>
+                                                <button name="<%= classDb[i].className %>" onclick="remove(this);send(this)" id="delete-class" >Delete Class</button>
+                                                </td>
+                                        </tr>
+                                <% }}} %>
                                 </tbody>
                         </table>
                     </div>
@@ -140,7 +169,23 @@
 
       <script src="js/javaadmin.js"></script>
       <script>
-         
+         function remove(elem){
+        elem.parentNode.parentNode.remove(elem);
+        }
+        function send(ele){
+            var stuId = ele.value
+            var className = ele.name
+            var data = {
+                "className":`${className}`,
+            }
+            var form = new FormData()
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/removeClass', true);
+            xhr.setRequestHeader('Content-type', 'application/json');
+
+                xhr.send(JSON.stringify(data));
+        }
+      
       </script>
 </body>
 </html>

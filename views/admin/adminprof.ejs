@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>admin</title>
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+    <link
+    href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
+    rel="stylesheet"
+/>
     <link rel="stylesheet" href="css/fontawesom.min.css">
     <link rel="stylesheet" href="css/styleadmin.css">
 </head>
@@ -91,20 +96,34 @@
             </div>
             <div class="main-content">
                  <div class="chprof-fields">
-                     <form class="change-profile">
+                     <form style="height: max-content;" action="/admin/profile" enctype="multipart/form-data" class="change-profile">
                         <div class="Ch-photo">                
                             <label class="header">Profile Photo:</label>           
-                            <input id="image" type="file" name="profile_photo" placeholder="Photo" required="" capture>
-                     </div>
+                            
                      <div class="ch-user">
-                        <input type="" placeholder="Change User">
+                        <input type="text" name="username" placeholder="Change User">
                     </div>
                     <div class="ch-password">
-                        <input type="" placeholder="Change Passwword">
+                        <input type="password" name="oldPassword" placeholder="old Passwword">
+                    </div>
+                    <div class="ch-password">
+                        <input type="password" name="password" placeholder="Change Passwword">
+                    </div>
+                    <div class="ch-password">
+                        <input type="password" name="passwordCon" placeholder="Conferm Passwword">
                     </div>
                     <div class="ch-phone">
-                        <input type="" placeholder="Change Phone">
+                        <input type="phon" name="phone" placeholder="Change Phone">
+    
                     </div>
+                    <input type="file" 
+    class="filepond"
+    name="cover" 
+    multiple 
+    data-allow-reorder="true"
+    data-max-file-size="3MB"
+    data-max-files="3">
+                        </div>
                     <div class="action-save">
                         <input type="submit" value="Save Change">
                     </div>
@@ -113,7 +132,24 @@
             </div>
         </div>
     </div>
+    <script src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
+    <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+    <script src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
 
+    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>    
       <script src="js/javaadmin.js"></script>
+      <script>
+          
+            
+            FilePond.registerPlugin(
+  FilePondPluginImagePreview,
+  FilePondPluginFileEncode,
+  FilePondPluginImageResize
+  
+);
+
+
+FilePond.parse(document.body);
+</script>
 </body>
 </html>

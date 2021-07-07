@@ -12,7 +12,7 @@
     <div class="badge-wrap">
         <div class="sidebar-left">
             <div class="logo">
-                <a href="user.html">
+                <a href="/user/">
                     <span class="icon">E</span>
                     <span class="title">E-Learning</span>
                 </a>
@@ -22,32 +22,34 @@
                   <img src="icon.png">
               </div>
               <div class="name-prof">
-                  <span id="...">User</span>   <!--Change Name of admin with contact name user-->
+                  <span id="..."><%=username%></span>   <!--Change Name of admin with contact name user-->
               </div>
             </div>
   
             <div class="sidebar-link">
                 <ul>
                     <li>
-                        <a href="mangstd.html">
+                        <a href="/user/mangeCourse">
                            <span class="icon"><i class="fas fa-school"></i></span> 
                             <span class="title">Manage Courses</span>
                         </a>
                     </li>
-                  <li>
-                    <a href="livestreamuser.html">
-                        <span class="icon"><i class="fas fa-desktop"></i></span> 
-                        <span class="title">LiveStream</span>
-                    </a>
-                </li>
+                    <% if(classList.length !== 0){ %> 
+                        <li>
+                          <a href="/user/live-class">
+                              <span class="icon"><i class="fas fa-desktop"></i></span> 
+                              <span class="title">LiveStream</span>
+                          </a>
+                      </li>
+                    <% } %> 
                 <li>
-                    <a href="userprof.html">
+                    <a href="/user/profile">
                         <span class="icon"><i class="fas fa-user"></i></span> 
                         <span class="title">Profile</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/logout">
                         <span class="icon"><i class="fas fa-sign-out-alt"></i></span> 
                         <span class="title">Log out</span>
                     </a>
@@ -66,12 +68,13 @@
                 <div class="setting-course">
                      
                      <div class="courses-control">
+                         <form action="/stuJoinReq" method="POST">
                         <div class="courses-option">
-                            <select>
-                                <option>..</option>
-                                <option>Ai</option>
-                                <option>HSI</option>
-                                <option>oop</option>
+                            <select name="className">
+                                <% for (let i = 0 ; i<classList.length;i++){ %> 
+                                <option value="<%= classList[i].className%>"><%= classList[i].className%></option>
+                                <% } %> 
+                               
                             </select>
                         </div>
                          <form>
@@ -80,6 +83,7 @@
                                 </div>
                          </form>
                      </div>
+                    </form>
                        
                 </div>
                 <div class="main-table" id="..."> <!-- Set Id  for student to manage courses-->
@@ -94,21 +98,22 @@
                                 </tr>
                             </thead>
                             <tbody>   <!--Here  link database from manage class-->
-                                <tr>
-                                    <td>Ai</td>
-                                    <td>Witting</td>  <!--link database from manage class-->
-                                    <td><button id="leave">Leave</button></td>  <!--link database from manage class-->
+                                <% if (ClassList.length === 0){%>
+                                    <tr>
+                                        <td>
+                                            you have no class join class from here <span>arow up</span> 
+                                        </td>
+                                    </tr>
+                                   <%}else{ %> 
+                                   <% for(let i = 0 ; i<ClassList.length;i ++){%>
+                                    
+                                    <tr>
+                                    <td><%= ClassList[i].className%></td>
+                                    <td><%= ClassList[i].classStats%></td>  <!--link database from manage class-->
+                                    <td><button id="leave" value="<%= ClassList[i].className%>" onclick="remove(this);send(this)">Leave</button></td>  <!--link database from manage class-->
                                 </tr>
-                                <tr>
-                                    <td>HSI</td>
-                                    <td>OK</td>  <!--link database from manage class-->
-                                    <td><button id="leave">Leave</button></td>  <!--link database from manage class-->
-                                </tr>
-                                <tr>
-                                    <td>OOP</td>
-                                    <td>Witting</td>  <!--link database from manage class-->
-                                    <td><button id="leave">Leave</button></td>  <!--link database from manage class-->
-                                </tr>
+                                   <% }} %>  <tr>
+                                
                             </tbody>
                         </table>
                     </div>
@@ -130,7 +135,22 @@ const togglesid = document.getElementById('toggle');
               let logoicon = document.querySelector('.logo .icon');
               logoicon.classList.toggle('active'); 
       })
+      function remove(elem){
+        elem.parentNode.parentNode.remove(elem);
+        }
+        function send(ele){
+            var className = ele.value
+            var data = {
+                "className":`${className}`,
+            }
+            var form = new FormData()
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/leaveClass', true);
+            xhr.setRequestHeader('Content-type', 'application/json');
 
+                xhr.send(JSON.stringify(data));
+        }
+      
 
 
       </script>
